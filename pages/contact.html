@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — The CPP Grind</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/main.css">
+  <style>
+    .contact-main { max-width: 720px; margin: 60px auto; padding: 0 24px; }
+    .contact-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+    }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .contact-grid .full { grid-column: 1 / -1; }
+    .field-label {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .field-input {
+      width: 100%;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 10px 12px;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: var(--text);
+      outline: none;
+      transition: border-color var(--transition);
+    }
+    .field-input:focus { border-color: var(--accent); }
+    textarea.field-input { min-height: 160px; resize: vertical; line-height: 1.7; }
+    .form-actions { display: flex; gap: 10px; align-items: center; margin-top: 14px; }
+    .btn-send {
+      appearance: none;
+      border: 1px solid var(--accent);
+      background: var(--accent);
+      color: #fff;
+      border-radius: var(--radius);
+      padding: 10px 14px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: background var(--transition), border-color var(--transition), opacity var(--transition);
+    }
+    .btn-send:hover { background: var(--accent2); border-color: var(--accent2); }
+    .btn-send[disabled] { opacity: 0.6; cursor: default; }
+    .status {
+      font-size: 12px;
+      color: var(--text2);
+    }
+    .status.ok { color: var(--green); }
+    .status.err { color: #ff6b6b; }
+    .tiny-note { margin-top: 12px; font-size: 12px; color: var(--text3); line-height: 1.7; }
+    .direct-links { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .pill {
+      display: inline-flex; align-items: center;
+      padding: 6px 12px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border2);
+      font-size: 12px;
+      color: var(--text2);
+    }
+    .pill:hover { color: var(--text); border-color: var(--text3); }
+    /* Honeypot: hide from humans */
+    .hp-field { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+    @media (max-width: 640px) { .contact-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand-wrap">
+        <button class="theme-toggle" type="button" role="switch" aria-label="Toggle light mode" aria-checked="false"></button>
+        <a href="../index.html" class="logo"><span class="logo-bracket">//</span> The CPP Grind</a>
+      </div>
+      <nav class="main-nav">
+        <a href="../index.html">Home</a>
+        <div class="nav-group">
+          <button>Learn</button>
+          <div class="dropdown-panel">
+            <a href="roadmap.html">Roadmap</a>
+            <a href="articles.html">Articles</a>
+          </div>
+        </div>
+        <div class="nav-group">
+          <button>Build</button>
+          <div class="dropdown-panel">
+            <a href="projects.html">Projects</a>
+            <a href="games.html">Games</a>
+            <a href="build-your-own.html">Build Your Own</a>
+          </div>
+        </div>
+        <div class="nav-group">
+          <button>Explore</button>
+          <div class="dropdown-panel">
+            <a href="references.html">References</a>
+            <a href="resources.html">Resources</a>
+          </div>
+        </div>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="nav-contact">Contact</a>
+      </nav>
+      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <div class="page-header" style="padding:60px 24px 40px;border-bottom:1px solid var(--border)">
+    <div class="section-inner">
+      <h1 style="font-family:var(--font-serif);font-size:clamp(28px,4vw,44px);font-weight:400">Contact</h1>
+      <p style="font-size:14px;color:var(--text2);margin-top:12px;max-width:600px">Get in touch.</p>
+    </div>
+  </div>
+
+  <main class="contact-main">
+    <div class="contact-card">
+      <form id="contact-form" method="POST" action="https://formspree.io/f/YOUR_FORM_ID">
+        <div class="contact-grid">
+          <div>
+            <label class="field-label" for="name">// Name</label>
+            <input class="field-input" id="name" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div>
+            <label class="field-label" for="email">// Email</label>
+            <input class="field-input" id="email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="full">
+            <label class="field-label" for="subject">// Subject</label>
+            <input class="field-input" id="subject" name="subject" type="text" placeholder="What’s this about?" required>
+          </div>
+          <div class="full">
+            <label class="field-label" for="message">// Message</label>
+            <textarea class="field-input" id="message" name="message" placeholder="Write your message…" required></textarea>
+          </div>
+
+          <!-- Honeypot spam field (should stay empty) -->
+          <div class="hp-field" aria-hidden="true">
+            <label for="website">Website</label>
+            <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+          </div>
+
+          <!-- Optional: set the email subject that Formspree sends -->
+          <input type="hidden" name="_subject" value="The CPP Grind — New contact form submission">
+        </div>
+
+        <div class="form-actions">
+          <button class="btn-send" id="contact-submit" type="submit">Send</button>
+          <div class="status" id="contact-status" role="status" aria-live="polite"></div>
+        </div>
+
+        <div class="tiny-note">
+          // This form is powered by Formspree (no tracking). If it fails, email me directly.
+        </div>
+        <div class="direct-links">
+          <a class="pill" href="mailto:cooperehuntington@gmail.com">Email: cooperehuntington@gmail.com</a>
+          <a class="pill" href="https://github.com/Cooper-Bugg" target="_blank" rel="noopener">GitHub</a>
+          <a class="pill" href="https://www.linkedin.com/in/cooper-huntington-bugg/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span class="footer-logo">The CPP Grind</span>
+      <span class="footer-note">Built while learning. Improving as I go.</span>
+      <div class="footer-links">
+        <a href="https://github.com/Cooper-Bugg" target="_blank">GitHub</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+  (function () {
+    const form = document.getElementById('contact-form');
+    if (!form) return;
+
+    const statusEl = document.getElementById('contact-status');
+    const submitBtn = document.getElementById('contact-submit');
+    const honeypot = document.getElementById('website');
+
+    function setStatus(msg, kind) {
+      if (!statusEl) return;
+      statusEl.textContent = msg || '';
+      statusEl.classList.remove('ok', 'err');
+      if (kind) statusEl.classList.add(kind);
+    }
+
+    form.addEventListener('submit', async (e) => {
+      // If honeypot filled, treat as spam: pretend success.
+      if (honeypot && honeypot.value.trim() !== '') {
+        e.preventDefault();
+        form.reset();
+        setStatus('Sent. Thanks!', 'ok');
+        return;
+      }
+
+      // Use AJAX so we can show inline success/error without leaving the page.
+      e.preventDefault();
+
+      const action = form.getAttribute('action') || '';
+      if (action.includes('YOUR_FORM_ID')) {
+        setStatus('Missing Formspree endpoint — paste your https://formspree.io/f/... URL into this page.', 'err');
+        return;
+      }
+
+      submitBtn?.setAttribute('disabled', 'true');
+      setStatus('Sending…');
+
+      try {
+        const data = new FormData(form);
+        const res = await fetch(action, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (res.ok) {
+          form.reset();
+          setStatus('Sent. Thanks — I’ll get back to you.', 'ok');
+        } else {
+          let msg = 'Couldn’t send. Try the email link below.';
+          try {
+            const json = await res.json();
+            if (json && json.errors && json.errors.length) {
+              msg = json.errors.map(e => e.message).join(' ');
+            }
+          } catch (_) {}
+          setStatus(msg, 'err');
+        }
+      } catch (err) {
+        setStatus('Network error. Try the email link below.', 'err');
+      } finally {
+        submitBtn?.removeAttribute('disabled');
+      }
+    });
+  })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Games — The CPP Grind</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/main.css">
+  <style>
+    .page-header { padding: 60px 24px 40px; border-bottom: 1px solid var(--border); }
+    .page-header h1 { font-family: var(--font-serif); font-size: clamp(28px,4vw,44px); font-weight: 400; }
+    .page-header p { font-size: 14px; color: var(--text2); margin-top: 12px; max-width: 600px; }
+    .keyboard { display: flex; flex-direction: column; gap: 6px; margin-top: 16px; }
+    .keyboard-row { display: flex; gap: 5px; justify-content: center; }
+    .key {
+      min-width: 34px; height: 48px; padding: 0 8px;
+      background: var(--bg3); border: 1px solid var(--border2);
+      border-radius: var(--radius); font-family: var(--font-mono);
+      font-size: 12px; font-weight: 700; color: var(--text);
+      cursor: pointer; transition: all 0.15s; display: flex;
+      align-items: center; justify-content: center;
+    }
+    .key:hover { background: var(--border); }
+    .key.wide { min-width: 52px; font-size: 11px; }
+    .key.correct { background: var(--green); border-color: var(--green); color: #000; }
+    .key.present { background: var(--yellow); border-color: var(--yellow); color: #000; }
+    .key.absent  { background: #222; border-color: #222; color: var(--text3); }
+    .wordle-input { display: none; }
+    .game-status { font-size: 13px; color: var(--text2); min-height: 20px; margin: 12px 0; text-align: center; }
+    .game-status.win { color: var(--green); }
+    .game-status.lose { color: var(--accent); }
+    .challenge-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+    .challenge-code { padding: 24px; font-size: 13px; line-height: 1.9; border-bottom: 1px solid var(--border); }
+    .challenge-question { padding: 16px 24px; font-size: 14px; color: var(--text2); font-weight: 500; }
+    .challenge-options { padding: 16px 24px 24px; display: flex; flex-direction: column; gap: 10px; }
+    .challenge-opt {
+      background: var(--bg3); border: 1px solid var(--border2);
+      border-radius: var(--radius); padding: 12px 16px;
+      font-family: var(--font-mono); font-size: 13px; color: var(--text);
+      cursor: pointer; text-align: left; transition: all 0.15s;
+    }
+    .challenge-opt:hover { background: var(--border); border-color: var(--border2); }
+    .challenge-opt.correct { background: rgba(78,201,148,0.15); border-color: var(--green); color: var(--green); }
+    .challenge-opt.wrong   { background: rgba(224,92,42,0.1);  border-color: var(--accent); color: var(--accent); }
+    .challenge-explanation { padding: 16px 24px; background: var(--bg3); font-size: 13px; color: var(--text2); line-height: 1.8; display: none; border-top: 1px solid var(--border); }
+    .challenge-explanation.show { display: block; }
+    .streak-bar { font-size: 12px; color: var(--text2); margin-bottom: 16px; display: flex; gap: 16px; }
+    .streak-bar span { color: var(--yellow); font-weight: 700; }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand-wrap">
+        <button class="theme-toggle" type="button" role="switch" aria-label="Toggle light mode" aria-checked="false"></button>
+        <a href="../index.html" class="logo"><span class="logo-bracket">//</span> The CPP Grind</a>
+      </div>
+      <nav class="main-nav">
+        <a href="../index.html">Home</a>
+        <div class="nav-group">
+          <button>Learn</button>
+          <div class="dropdown-panel">
+            <a href="roadmap.html">Roadmap</a>
+            <a href="articles.html">Articles</a>
+          </div>
+        </div>
+        <div class="nav-group">
+          <button>Build</button>
+          <div class="dropdown-panel">
+            <a href="projects.html">Projects</a>
+            <a href="games.html">Games</a>
+            <a href="build-your-own.html">Build Your Own</a>
+          </div>
+        </div>
+        <div class="nav-group">
+          <button>Explore</button>
+          <div class="dropdown-panel">
+            <a href="references.html">References</a>
+            <a href="resources.html">Resources</a>
+          </div>
+        </div>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="nav-contact">Contact</a>
+      </nav>
+      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <div class="page-header">
+    <div class="section-inner">
+      <h1>Daily Games</h1>
+      <p>Two puzzles every day. Same puzzle for everyone — resets at midnight. Progress saves locally.</p>
+    </div>
+  </div>
+
+  <div class="games-grid">
+
+    <!-- C++ WORDLE -->
+    <div class="game-card">
+      <h2>C++ Wordle</h2>
+      <p>Guess today's C++ keyword. Letters flash green (correct), yellow (wrong spot), grey (not in word).</p>
+      <div class="streak-bar">
+        Streak: <span id="wordle-streak">0</span> &nbsp;|&nbsp; Best: <span id="wordle-best">0</span>
+      </div>
+      <div class="wordle-grid" id="wordle-grid"></div>
+      <div class="game-status" id="wordle-status"></div>
+      <input class="wordle-input" id="wordle-input" maxlength="8" autocomplete="off" spellcheck="false">
+      <div class="keyboard" id="wordle-keyboard"></div>
+    </div>
+
+    <!-- DAILY CODE CHALLENGE -->
+    <div class="game-card">
+      <h2>Code Challenge</h2>
+      <p>One question daily. Will it compile? What's the output? Buffer overflow? Undefined behavior?</p>
+      <div class="streak-bar">
+        Streak: <span id="challenge-streak">0</span> &nbsp;|&nbsp; Best: <span id="challenge-best">0</span>
+      </div>
+      <div class="challenge-card" id="challenge-card">
+        <div class="challenge-code" id="challenge-code"></div>
+        <div class="challenge-question" id="challenge-question"></div>
+        <div class="challenge-options" id="challenge-options"></div>
+        <div class="challenge-explanation" id="challenge-explanation"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="../js/main.js"></script>
+  <script>
+  // ============================================
+  // WORD BANK — C++ keywords (5-8 chars)
+  // ============================================
+  const WORDS = [
+    'const','class','short','while','break','float','using','throw',
+    'catch','false','union','wchar','void','bool','char','goto','true',
+    'nullptr','virtual','typedef','mutable','inline','delete','static',
+    'friend','return','signed','struct','switch','extern','public',
+    'private','double','sizeof','typeid','thread','atomic','vector',
+    'string','shared','unique','future','lambda','noexcept','constexpr'
+  ];
+
+  // ============================================
+  // C++ CODE CHALLENGE BANK
+  // ============================================
+  const CHALLENGES = [
+    {
+      code: `int main() {\n  int x = 2147483647;\n  x = x + 1;\n  std::cout << x;\n}`,
+      question: "What does this print?",
+      options: ["2147483648", "-2147483648", "Undefined behavior", "Compile error"],
+      answer: 1,
+      explanation: "int overflow is undefined behavior in C++, but on most implementations it wraps to the most negative int: -2147483648. The real answer is technically UB — both 1 and 2 could be argued correct depending on context.",
+      type: "output"
+    },
+    {
+      code: `int arr[5] = {1,2,3,4,5};\nstd::cout << arr[5];`,
+      question: "Will this buffer overflow?",
+      options: ["Yes — reads out of bounds", "No — arrays are 0-indexed so arr[5] is valid", "Compile error"],
+      answer: 0,
+      explanation: "arr[5] is out of bounds. Valid indices are 0–4. This is undefined behavior — it may print garbage, crash, or appear to work. Never trust it.",
+      type: "overflow"
+    },
+    {
+      code: `int* p = nullptr;\n*p = 42;`,
+      question: "What happens?",
+      options: ["Prints 42", "Sets memory at address 0 to 42", "Segmentation fault / undefined behavior", "Compile error"],
+      answer: 2,
+      explanation: "Dereferencing a null pointer is undefined behavior. In practice this almost always causes a segfault and crashes the program immediately.",
+      type: "crash"
+    },
+    {
+      code: `std::string s = "hello";\nstd::cout << s.length();`,
+      question: "What does this print?",
+      options: ["4", "5", "6", "Compile error"],
+      answer: 1,
+      explanation: "std::string::length() returns the number of characters. \"hello\" has 5 characters, so it prints 5.",
+      type: "output"
+    },
+    {
+      code: `int x = 5;\nint y = x++;\nstd::cout << x << " " << y;`,
+      question: "What does this print?",
+      options: ["5 5", "6 5", "5 6", "6 6"],
+      answer: 1,
+      explanation: "x++ is post-increment: y gets the original value (5), then x is incremented to 6. Output: 6 5.",
+      type: "output"
+    },
+    {
+      code: `const int x = 10;\nx = 20;`,
+      question: "Will this compile?",
+      options: ["Yes", "No — cannot assign to const variable"],
+      answer: 1,
+      explanation: "const variables cannot be modified after initialization. The compiler will produce an error: 'assignment of read-only variable'.",
+      type: "compile"
+    },
+    {
+      code: `int x = 10;\nif (x = 5) {\n  std::cout << "yes";\n}`,
+      question: "What does this print?",
+      options: ["nothing", "yes", "Compile error", "Undefined behavior"],
+      answer: 1,
+      explanation: "x = 5 is assignment, not comparison. It assigns 5 to x and evaluates to 5, which is truthy. Prints 'yes'. This is a classic bug — should be x == 5.",
+      type: "gotcha"
+    },
+    {
+      code: `void foo(int n) {\n  foo(n - 1);\n}\nfoo(1000000);`,
+      question: "What likely happens?",
+      options: ["Runs forever", "Stack overflow / crash", "Returns normally", "Compile error"],
+      answer: 1,
+      explanation: "No base case means infinite recursion. Each call pushes a stack frame. The stack runs out of memory and the program crashes with a stack overflow.",
+      type: "crash"
+    }
+  ];
+
+  // ============================================
+  // WORDLE LOGIC
+  // ============================================
+  const todayWord = getDailyItem(WORDS).toUpperCase();
+  const MAX_GUESSES = 6;
+  let currentGuess = '';
+  let guessCount = 0;
+  let gameOver = false;
+  let keyState = {};
+
+  const grid = document.getElementById('wordle-grid');
+  const status = document.getElementById('wordle-status');
+  const input = document.getElementById('wordle-input');
+  const wordLen = todayWord.length;
+
+  // Load saved state
+  const savedState = JSON.parse(localStorage.getItem('wordle:' + getDailySeed()) || 'null');
+
+  function buildGrid() {
+    grid.innerHTML = '';
+    for (let r = 0; r < MAX_GUESSES; r++) {
+      const row = document.createElement('div');
+      row.className = 'wordle-row';
+      for (let c = 0; c < wordLen; c++) {
+        const cell = document.createElement('div');
+        cell.className = 'wordle-cell';
+        cell.id = `cell-${r}-${c}`;
+        row.appendChild(cell);
+      }
+      grid.appendChild(row);
+    }
+  }
+
+  function buildKeyboard() {
+    const rows = [
+      ['Q','W','E','R','T','Y','U','I','O','P'],
+      ['A','S','D','F','G','H','J','K','L'],
+      ['ENTER','Z','X','C','V','B','N','M','⌫']
+    ];
+    const kb = document.getElementById('wordle-keyboard');
+    kb.innerHTML = '';
+    rows.forEach(row => {
+      const rowEl = document.createElement('div');
+      rowEl.className = 'keyboard-row';
+      row.forEach(k => {
+        const btn = document.createElement('button');
+        btn.className = 'key' + (k.length > 1 ? ' wide' : '');
+        btn.textContent = k;
+        btn.id = 'key-' + k;
+        btn.addEventListener('click', () => handleKey(k));
+        rowEl.appendChild(btn);
+      });
+      kb.appendChild(rowEl);
+    });
+  }
+
+  function handleKey(k) {
+    if (gameOver) return;
+    if (k === '⌫' || k === 'Backspace') {
+      currentGuess = currentGuess.slice(0, -1);
+    } else if (k === 'ENTER' || k === 'Enter') {
+      if (currentGuess.length < wordLen) { status.textContent = `Need ${wordLen} letters`; return; }
+      submitGuess();
+    } else if (/^[A-Z]$/.test(k) && currentGuess.length < wordLen) {
+      currentGuess += k;
+    }
+    updateCurrentRow();
+  }
+
+  function updateCurrentRow() {
+    for (let c = 0; c < wordLen; c++) {
+      const cell = document.getElementById(`cell-${guessCount}-${c}`);
+      if (cell) cell.textContent = currentGuess[c] || '';
+    }
+  }
+
+  function submitGuess() {
+    const guess = currentGuess;
+    const result = scoreGuess(guess, todayWord);
+    for (let c = 0; c < wordLen; c++) {
+      const cell = document.getElementById(`cell-${guessCount}-${c}`);
+      cell.textContent = guess[c];
+      cell.classList.add(result[c]);
+      const keyEl = document.getElementById('key-' + guess[c]);
+      if (keyEl) {
+        const prev = keyState[guess[c]];
+        if (result[c] === 'correct' || (result[c] === 'present' && prev !== 'correct') || (!prev)) {
+          keyEl.className = 'key' + (guess[c].length > 1 ? ' wide' : '') + ' ' + result[c];
+          keyState[guess[c]] = result[c];
+        }
+      }
+    }
+    guessCount++;
+    currentGuess = '';
+    if (guess === todayWord) {
+      status.textContent = '🎉 Correct!';
+      status.className = 'game-status win';
+      gameOver = true;
+      updateStreak('wordle', true);
+    } else if (guessCount >= MAX_GUESSES) {
+      status.textContent = `Answer: ${todayWord}`;
+      status.className = 'game-status lose';
+      gameOver = true;
+      updateStreak('wordle', false);
+    }
+    saveWordleState();
+  }
+
+  function scoreGuess(guess, answer) {
+    const result = Array(answer.length).fill('absent');
+    const answerArr = answer.split('');
+    const guessArr = guess.split('');
+    // Correct pass
+    for (let i = 0; i < answer.length; i++) {
+      if (guessArr[i] === answerArr[i]) { result[i] = 'correct'; answerArr[i] = null; guessArr[i] = null; }
+    }
+    // Present pass
+    for (let i = 0; i < answer.length; i++) {
+      if (guessArr[i] === null) continue;
+      const idx = answerArr.indexOf(guessArr[i]);
+      if (idx !== -1) { result[i] = 'present'; answerArr[idx] = null; }
+    }
+    return result;
+  }
+
+  function saveWordleState() {
+    localStorage.setItem('wordle:' + getDailySeed(), JSON.stringify({ guessCount, gameOver, keyState }));
+  }
+
+  // ============================================
+  // STREAK TRACKING
+  // ============================================
+  function updateStreak(game, won) {
+    const key = `streak:${game}`;
+    const lastKey = `streak:${game}:last`;
+    const bestKey = `streak:${game}:best`;
+    const today = getDailySeed();
+    const last = parseInt(localStorage.getItem(lastKey) || '0');
+    let streak = parseInt(localStorage.getItem(key) || '0');
+    let best = parseInt(localStorage.getItem(bestKey) || '0');
+    if (won) {
+      if (last !== today) { streak = streak + 1; }
+      best = Math.max(best, streak);
+      localStorage.setItem(key, streak);
+      localStorage.setItem(bestKey, best);
+      localStorage.setItem(lastKey, today);
+    } else {
+      streak = 0;
+      localStorage.setItem(key, streak);
+    }
+    document.getElementById(`${game}-streak`).textContent = streak;
+    document.getElementById(`${game}-best`).textContent = best;
+  }
+
+  function loadStreaks() {
+    ['wordle','challenge'].forEach(g => {
+      document.getElementById(`${g}-streak`).textContent = localStorage.getItem(`streak:${g}`) || '0';
+      document.getElementById(`${g}-best`).textContent = localStorage.getItem(`streak:${g}:best`) || '0';
+    });
+  }
+
+  // ============================================
+  // DAILY CHALLENGE LOGIC
+  // ============================================
+  const todayChallenge = getDailyItem(CHALLENGES);
+  let challengeDone = false;
+
+  function buildChallenge() {
+    const saved = localStorage.getItem('challenge:' + getDailySeed());
+    if (saved) {
+      const { chose, correct } = JSON.parse(saved);
+      renderChallenge(chose, correct);
+      challengeDone = true;
+      return;
+    }
+    renderChallenge(-1, false);
+  }
+
+  function renderChallenge(chose, revealed) {
+    const codeEl = document.getElementById('challenge-code');
+    const qEl = document.getElementById('challenge-question');
+    const optsEl = document.getElementById('challenge-options');
+    const expEl = document.getElementById('challenge-explanation');
+
+    codeEl.innerHTML = '<pre><code>' + formatCode(todayChallenge.code) + '</code></pre>';
+    qEl.textContent = todayChallenge.question;
+    optsEl.innerHTML = '';
+
+    todayChallenge.options.forEach((opt, i) => {
+      const btn = document.createElement('button');
+      btn.className = 'challenge-opt';
+      btn.textContent = opt;
+      if (revealed) {
+        if (i === todayChallenge.answer) btn.classList.add('correct');
+        else if (i === chose && chose !== todayChallenge.answer) btn.classList.add('wrong');
+        btn.disabled = true;
+      } else {
+        btn.addEventListener('click', () => answerChallenge(i));
+      }
+      optsEl.appendChild(btn);
+    });
+
+    if (revealed) {
+      expEl.textContent = todayChallenge.explanation;
+      expEl.classList.add('show');
+    }
+  }
+
+  function answerChallenge(i) {
+    if (challengeDone) return;
+    challengeDone = true;
+    const correct = i === todayChallenge.answer;
+    localStorage.setItem('challenge:' + getDailySeed(), JSON.stringify({ chose: i, correct }));
+    renderChallenge(i, true);
+    updateStreak('challenge', correct);
+  }
+
+  function formatCode(code) {
+    return code
+      .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+      .replace(/(\/\/.*)/g, '<span class="c-comment">$1</span>')
+      .replace(/\b(int|void|bool|char|float|double|auto|return|const|nullptr|std)\b/g, '<span class="c-type">$1</span>')
+      .replace(/"([^"]*)"/g, '<span class="c-string">"$1"</span>')
+      .replace(/\b(\d+)\b/g, '<span class="c-num">$1</span>');
+  }
+
+  // ============================================
+  // KEYBOARD INPUT
+  // ============================================
+  document.addEventListener('keydown', e => {
+    if (e.ctrlKey || e.metaKey) return;
+    if (e.key === 'Enter') handleKey('Enter');
+    else if (e.key === 'Backspace') handleKey('Backspace');
+    else if (/^[a-zA-Z]$/.test(e.key)) handleKey(e.key.toUpperCase());
+  });
+
+  // INIT
+  buildGrid();
+  buildKeyboard();
+  buildChallenge();
+  loadStreaks();
+  </script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ch. 9 — Backtracking — The CPP Grind</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../css/main.css" />
+  <style>
+    .article-wrap { max-width: 820px; margin: 60px auto; padding: 0 24px; }
+    .article-head { padding-bottom: 24px; border-bottom: 1px solid var(--border); margin-bottom: 24px; }
+    .article-kicker { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: var(--accent); text-transform: uppercase; margin-bottom: 10px; }
+    .article-title { font-family: var(--font-serif); font-size: clamp(28px, 4vw, 44px); font-weight: 400; letter-spacing: -0.02em; }
+    .article-sub { margin-top: 10px; color: var(--text2); font-size: 14px; line-height: 1.9; }
+    .article-body { color: var(--text2); font-size: 14px; line-height: 1.9; }
+    .article-body h2 { color: var(--text); font-size: 14px; margin: 22px 0 10px; letter-spacing: 0.02em; }
+    .article-body ul { margin: 8px 0 4px 18px; }
+    .article-body li { margin: 6px 0; }
+    .article-body code { font-family: var(--font-mono); font-size: 12px; background: var(--bg2); padding: 2px 6px; border-radius: 3px; color: var(--green); border: 1px solid var(--border); }
+    .article-nav { display: flex; justify-content: space-between; gap: 12px; margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--border); }
+    .article-nav a { font-size: 12px; font-weight: 800; color: var(--blue); }
+    .article-nav a:hover { text-decoration: underline; }
+    .back-row { margin-top: 18px; }
+    .back-row a { color: var(--text3); font-size: 12px; }
+    .back-row a:hover { color: var(--text2); }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand-wrap">
+        <button class="theme-toggle" type="button" role="switch" aria-label="Toggle light mode" aria-checked="false"></button>
+        <a href="../../index.html" class="logo"><span class="logo-bracket">//</span> The CPP Grind</a>
+      </div>
+      <nav class="main-nav">
+        <a href="../../index.html">Home</a>
+        <div class="nav-group">
+          <button>Learn</button>
+          <div class="dropdown-panel">
+            <a href="../../pages/roadmap.html">Roadmap</a>
+            <a href="../../pages/articles.html">Articles</a>
+          </div>
+        </div>
+        <div class="nav-group">
+          <button>Build</button>
+          <div class="dropdown-panel">
+            <a href="../../pages/projects.html">Projects</a>
+            <a href="../../pages/games.html">Games</a>
+            <a href="../../pages/build-your-own.html">Build Your Own</a>
+          </div>
+        </div>
+        <div class="nav-group">
+          <button>Explore</button>
+          <div class="dropdown-panel">
+            <a href="../../pages/references.html">References</a>
+            <a href="../../pages/resources.html">Resources</a>
+          </div>
+        </div>
+        <a href="../../pages/about.html">About</a>
+        <a href="../../pages/contact.html" class="nav-contact">Contact</a>
+      </nav>
+      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </header>
+
+
+  <main class="article-wrap">
+    <header class="article-head">
+      <div class="article-kicker">// Chapter 9</div>
+      <h1 class="article-title">Backtracking</h1>
+      <p class="article-sub">Notes, checkpoints, and examples for Chapter 9. This page starts as a scaffold so I can fill it in as I work through the material.</p>
+      <div class="back-row"><a href="../../pages/roadmap.html">← Back to Roadmap</a></div>
+    </header>
+
+    <section class="article-body">
+      <h2>What I’m trying to learn here</h2>
+      <ul>
+        <li>Add the real chapter outline and exercises</li>
+        <li>Capture tricky parts + “gotchas” I hit while coding</li>
+        <li>Link out to related LearnCpp / cppreference pages</li>
+      </ul>
+
+      <h2>Notes</h2>
+      <ul>
+        <li>// Coming soon — fill in as I go</li>
+      </ul>
+    </section>
+
+    <nav class="article-nav" aria-label="Chapter navigation">
+      <a href="ch-08-recursive-strategies.html">← Prev</a>
+      <a href="ch-10-algorithmic-analysis.html">Next → Ch. 10</a>
+    </nav>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span class="footer-logo">The CPP Grind</span>
+      <span class="footer-note">Built while learning. Improving as I go.</span>
+      <div class="footer-links">
+        <a href="https://github.com/Cooper-Bugg" target="_blank" rel="noopener">GitHub</a>
+        <a href="../../pages/contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../js/main.js"></script>
+
+</body>
+</html>

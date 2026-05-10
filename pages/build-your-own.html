@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Build Your Own — The CPP Grind</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/main.css">
+  <style>
+    .page-header { padding: 60px 24px 40px; border-bottom: 1px solid var(--border); }
+    .page-header h1 { font-family: var(--font-serif); font-size: clamp(28px,4vw,44px); font-weight: 400; }
+    .page-header p { font-size: 14px; color: var(--text2); margin-top: 12px; max-width: 600px; }
+    .page-header blockquote {
+      margin-top: 20px; padding: 12px 20px;
+      border-left: 3px solid var(--border2);
+      font-size: 13px; color: var(--text3); font-style: italic;
+    }
+
+    .byo-body { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+    .byo-section { padding: 48px 0; border-bottom: 1px solid var(--border); }
+    .byo-section:last-child { border-bottom: none; padding-bottom: 80px; }
+    .byo-section-label {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+      color: var(--accent); margin-bottom: 20px; text-transform: uppercase;
+    }
+
+    /* ── Personal projects ── */
+    .personal-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+    }
+    .personal-card {
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 20px;
+      display: flex; flex-direction: column; gap: 8px;
+      transition: background var(--transition);
+    }
+    .personal-card:not(.placeholder):hover { background: var(--bg3); cursor: pointer; }
+    .personal-card.placeholder {
+      border-style: dashed; border-color: var(--border2);
+      background: transparent; align-items: center; justify-content: center;
+      min-height: 120px; text-align: center;
+    }
+    .placeholder-label { font-size: 13px; color: var(--text3); }
+    .placeholder-sub { font-size: 11px; color: var(--text3); margin-top: 4px; line-height: 1.6; }
+    .personal-tag {
+      font-size: 10px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.06em; padding: 2px 7px; border-radius: 3px;
+      width: fit-content;
+    }
+    .personal-title { font-size: 13px; font-weight: 700; color: var(--text); }
+    .personal-desc  { font-size: 12px; color: var(--text2); line-height: 1.6; }
+    .personal-link  { font-size: 11px; color: var(--accent); margin-top: 4px; }
+
+    /* ── Controls ── */
+    .tile-controls {
+      display: flex; flex-direction: column; gap: 12px; margin-bottom: 28px;
+    }
+    .controls-row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+    .search-wrap { position: relative; flex: 1; max-width: 360px; }
+    .search-wrap::before {
+      content: "⌕"; position: absolute; left: 11px; top: 50%;
+      transform: translateY(-50%); color: var(--text3); font-size: 16px; pointer-events: none;
+    }
+    #byo-search {
+      width: 100%; background: var(--bg2); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 8px 12px 8px 32px;
+      font-family: var(--font-mono); font-size: 13px; color: var(--text);
+      outline: none; transition: border-color var(--transition);
+    }
+    #byo-search:focus { border-color: var(--accent); }
+    #byo-search::placeholder { color: var(--text3); }
+    .filter-select {
+      background: var(--bg2); border: 1px solid var(--border2);
+      border-radius: var(--radius); padding: 7px 12px;
+      font-family: var(--font-mono); font-size: 12px; color: var(--text2);
+      cursor: pointer; outline: none;
+    }
+    .filter-select:focus { border-color: var(--accent); }
+    .filter-row { display: flex; flex-wrap: wrap; gap: 6px; }
+    .filter-btn {
+      background: var(--bg2); border: 1px solid var(--border2);
+      border-radius: var(--radius); padding: 4px 12px;
+      font-family: var(--font-mono); font-size: 11px; color: var(--text2);
+      cursor: pointer; transition: all var(--transition); white-space: nowrap;
+    }
+    .filter-btn:hover { color: var(--text); border-color: var(--text3); }
+    .filter-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .results-count { font-size: 11px; color: var(--text3); margin-left: auto; white-space: nowrap; }
+
+    /* ── Tile grid ── */
+    .tile-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+    }
+    .byo-tile {
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 18px 20px;
+      display: flex; flex-direction: column; gap: 10px;
+      transition: background var(--transition), border-color var(--transition);
+      cursor: pointer;
+    }
+    .byo-tile:hover { background: var(--bg3); border-color: var(--border2); }
+    .tile-header { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .lang-badge {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.05em;
+      text-transform: uppercase; padding: 2px 8px; border-radius: 3px;
+      flex-shrink: 0;
+    }
+    .lang-cpp        { color: var(--blue);   background: rgba(91,163,217,0.15); }
+    .lang-c          { color: var(--green);  background: rgba(78,201,148,0.12); }
+    .lang-python     { color: var(--yellow); background: rgba(232,184,75,0.12); }
+    .lang-go         { color: #79d4ef;       background: rgba(121,212,239,0.10); }
+    .lang-rust       { color: var(--accent); background: rgba(224,92,42,0.12); }
+    .lang-javascript { color: #f7df1e;       background: rgba(247,223,30,0.10); }
+    .lang-ruby       { color: #cc342d;       background: rgba(204,52,45,0.10); }
+    .lang-haskell    { color: var(--purple); background: rgba(155,114,207,0.12); }
+    .lang-java       { color: #5382a1;       background: rgba(83,130,161,0.12); }
+    .lang-any        { color: var(--text3);  background: var(--bg3); }
+    .lang-other      { color: var(--text3);  background: var(--bg3); }
+    .diff-badge {
+      font-size: 10px; padding: 2px 7px; border-radius: 3px;
+      white-space: nowrap; flex-shrink: 0;
+    }
+    .diff-beginner    { color: var(--green);  background: rgba(78,201,148,0.1); }
+    .diff-intermediate{ color: var(--yellow); background: rgba(232,184,75,0.1); }
+    .diff-advanced    { color: var(--accent); background: rgba(224,92,42,0.1); }
+    .tile-title { font-size: 13px; font-weight: 700; color: var(--text); line-height: 1.4; }
+    .tile-desc  { font-size: 12px; color: var(--text2); line-height: 1.7; flex: 1; }
+    .tile-footer {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 8px; margin-top: 2px;
+    }
+    .tile-meta { display: flex; gap: 6px; flex-wrap: wrap; }
+    .tile-meta-item { font-size: 10px; color: var(--text3); }
+    .tile-translatable { font-size: 10px; color: var(--green); font-weight: 700; }
+    .tile-link { font-size: 12px; color: var(--accent); font-weight: 700; flex-shrink: 0; }
+    .tile-link:hover { text-decoration: underline; }
+
+    /* ── Pagination ── */
+    .pagination {
+      display: flex; align-items: center; justify-content: center;
+      gap: 6px; padding: 32px 0 0; flex-wrap: wrap;
+    }
+    .page-btn {
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 6px 12px;
+      font-family: var(--font-mono); font-size: 12px; color: var(--text2);
+      cursor: pointer; transition: all var(--transition);
+    }
+    .page-btn:hover { color: var(--text); border-color: var(--text3); }
+    .page-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .page-btn:disabled { opacity: 0.3; cursor: default; }
+    .page-ellipsis { font-size: 12px; color: var(--text3); padding: 0 4px; }
+
+    .no-results { color: var(--text3); font-size: 13px; padding: 48px 0; text-align: center; }
+
+    @media (max-width: 900px) {
+      .tile-grid { grid-template-columns: 1fr 1fr; }
+      .personal-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 580px) {
+      .tile-grid { grid-template-columns: 1fr; }
+      .personal-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand-wrap">
+        <button class="theme-toggle" type="button" role="switch" aria-label="Toggle light mode" aria-checked="false"></button>
+        <a href="../index.html" class="logo"><span class="logo-bracket">//</span> The CPP Grind</a>
+      </div>
+      <nav class="main-nav">
+        <a href="../index.html">Home</a>
+        <div class="nav-group">
+          <button>Learn</button>
+          <div class="dropdown-panel">
+            <a href="roadmap.html">Roadmap</a>
+            <a href="articles.html">Articles</a>
+          </div>
+        </div>
+        <div class="nav-group">
+          <button>Build</button>
+          <div class="dropdown-panel">
+            <a href="projects.html">Projects</a>
+            <a href="games.html">Games</a>
+            <a href="build-your-own.html">Build Your Own</a>
+          </div>
+        </div>
+        <div class="nav-group">
+          <button>Explore</button>
+          <div class="dropdown-panel">
+            <a href="references.html">References</a>
+            <a href="resources.html">Resources</a>
+          </div>
+        </div>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="nav-contact">Contact</a>
+      </nav>
+      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <div class="page-header">
+    <div class="section-inner">
+      <h1>Build Your Own</h1>
+      <p>Guided projects for building real things from scratch — shells, databases, emulators, compilers, and more.</p>
+      <blockquote>"What I cannot create, I do not understand." — Richard Feynman</blockquote>
+    </div>
+  </div>
+
+  <div class="byo-body">
+
+    <!-- ══════════════════════════════════════
+         MY PROJECTS & ARTICLES
+         Add your own build projects and articles here.
+         Each card is a .personal-card div.
+         Copy the example format below and fill in your own.
+    ═══════════════════════════════════════════ -->
+    <div class="byo-section">
+      <div class="byo-section-label">// My Projects</div>
+      <div class="personal-grid" id="personal-grid">
+
+        <!--
+          EXAMPLE CARD — copy this and fill in your own:
+
+          <div class="personal-card" onclick="window.open('https://github.com/Cooper-Bugg/...','_blank')">
+            <span class="personal-tag" style="color:var(--blue);background:rgba(91,163,217,0.12)">C++</span>
+            <div class="personal-title">Your Project Name</div>
+            <div class="personal-desc">One or two sentences about what it does and what you learned.</div>
+            <a class="personal-link" href="https://github.com/Cooper-Bugg/..." target="_blank">GitHub →</a>
+          </div>
+        -->
+
+        <div class="personal-card placeholder">
+          <div class="placeholder-label">+ Add your build projects</div>
+          <div class="placeholder-sub">Copy the example comment above and paste your own project cards here</div>
+        </div>
+
+        <div class="personal-card placeholder">
+          <div class="placeholder-label">+ Link an article</div>
+          <div class="placeholder-sub">Document something you built and link the write-up here</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════
+         COMMUNITY BUILD PROJECTS
+    ═══════════════════════════════════════════ -->
+    <div class="byo-section">
+      <div class="byo-section-label">// Community Projects</div>
+
+      <div class="tile-controls">
+        <div class="controls-row">
+          <div class="search-wrap">
+            <input type="text" id="byo-search" placeholder="Search projects..." autocomplete="off">
+          </div>
+          <select class="filter-select" id="cat-select">
+            <option value="all">All Categories</option>
+            <option value="3d-renderer">3D Renderer</option>
+            <option value="ai-model">AI Model</option>
+            <option value="bittorrent-client">BitTorrent Client</option>
+            <option value="blockchain">Blockchain</option>
+            <option value="database">Database</option>
+            <option value="docker">Container / Docker</option>
+            <option value="emulator">Emulator / VM</option>
+            <option value="frontend-framework">Frontend Framework</option>
+            <option value="game">Game</option>
+            <option value="git">Git</option>
+            <option value="memory-allocator">Memory Allocator</option>
+            <option value="network-stack">Network Stack</option>
+            <option value="neural-network">Neural Network</option>
+            <option value="operating-system">Operating System</option>
+            <option value="physics-engine">Physics Engine</option>
+            <option value="programming-language">Language / Compiler</option>
+            <option value="regex-engine">Regex Engine</option>
+            <option value="search-engine">Search Engine</option>
+            <option value="shell">Shell</option>
+            <option value="text-editor">Text Editor</option>
+            <option value="voxel-engine">Voxel Engine</option>
+            <option value="web-browser">Web Browser</option>
+            <option value="web-server">Web Server</option>
+            <option value="uncategorized">Uncategorized</option>
+          </select>
+          <span class="results-count" id="results-count"></span>
+        </div>
+        <div class="controls-row">
+          <div class="filter-row" id="lang-filters">
+            <button class="filter-btn active" data-ft="language" data-val="all">All Languages</button>
+            <button class="filter-btn" data-ft="language" data-val="c++">C++</button>
+            <button class="filter-btn" data-ft="language" data-val="c">C</button>
+            <button class="filter-btn" data-ft="language" data-val="rust">Rust</button>
+            <button class="filter-btn" data-ft="language" data-val="go">Go</button>
+            <button class="filter-btn" data-ft="language" data-val="python">Python</button>
+            <button class="filter-btn" data-ft="language" data-val="javascript">JavaScript</button>
+          </div>
+        </div>
+        <div class="controls-row">
+          <div class="filter-row" id="diff-filters">
+            <button class="filter-btn active" data-ft="difficulty" data-val="all">All Difficulties</button>
+            <button class="filter-btn" data-ft="difficulty" data-val="beginner">Beginner</button>
+            <button class="filter-btn" data-ft="difficulty" data-val="intermediate">Intermediate</button>
+            <button class="filter-btn" data-ft="difficulty" data-val="advanced">Advanced</button>
+          </div>
+          <div class="filter-row" id="len-filters">
+            <button class="filter-btn active" data-ft="length" data-val="all">Any Length</button>
+            <button class="filter-btn" data-ft="length" data-val="weekend">Weekend</button>
+            <button class="filter-btn" data-ft="length" data-val="week">Week</button>
+            <button class="filter-btn" data-ft="length" data-val="month">Month</button>
+            <button class="filter-btn" data-ft="length" data-val="semester">Semester</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="tile-grid" id="tile-grid">
+        <p style="color:var(--text3);font-size:13px">// Loading...</p>
+      </div>
+      <div class="pagination" id="pagination"></div>
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span class="footer-logo">The CPP Grind</span>
+      <span class="footer-note">Built while learning. Improving as I go.</span>
+      <div class="footer-links">
+        <a href="https://github.com/Cooper-Bugg" target="_blank">GitHub</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+  const PER_PAGE = 12;
+  let allItems  = [];
+  let filtered  = [];
+  let currentPage = 1;
+  let activeFilters = { language: 'all', difficulty: 'all', length: 'all' };
+
+  // ── Load JSON ─────────────────────────────────────────────
+  fetch('../site-data.json')
+    .then(r => r.json())
+    .then(data => {
+      allItems = data.build_your_own || [];
+      applyFilters();
+    })
+    .catch(() => {
+      document.getElementById('tile-grid').innerHTML = '<p class="no-results">// Could not load data.</p>';
+    });
+
+  // ── Filter + Search ───────────────────────────────────────
+  function applyFilters() {
+    const q   = document.getElementById('byo-search').value.toLowerCase().trim();
+    const cat = document.getElementById('cat-select').value;
+    filtered = allItems.filter(item => {
+      const mLang = activeFilters.language   === 'all' || item.language   === activeFilters.language;
+      const mDiff = activeFilters.difficulty === 'all' || item.difficulty === activeFilters.difficulty;
+      const mLen  = activeFilters.length     === 'all' || item.length     === activeFilters.length;
+      const mCat  = cat === 'all' || item.category === cat;
+      const mQ    = !q  ||
+        item.title.toLowerCase().includes(q) ||
+        item.description.toLowerCase().includes(q) ||
+        item.language.includes(q) ||
+        (item.tags || []).some(t => t.includes(q));
+      return mLang && mDiff && mLen && mCat && mQ;
+    });
+    currentPage = 1;
+    document.getElementById('results-count').textContent = filtered.length + ' results';
+    renderTiles();
+  }
+
+  function langClass(lang) {
+    const map = { 'c++':'lang-cpp', 'c':'lang-c', python:'lang-python',
+      go:'lang-go', rust:'lang-rust', javascript:'lang-javascript',
+      ruby:'lang-ruby', haskell:'lang-haskell', java:'lang-java', any:'lang-any' };
+    return map[lang] || 'lang-other';
+  }
+
+  function renderTiles() {
+    const grid = document.getElementById('tile-grid');
+    if (!filtered.length) {
+      grid.innerHTML = '<p class="no-results">// No results — try a different filter.</p>';
+      document.getElementById('pagination').innerHTML = '';
+      return;
+    }
+    const total    = Math.ceil(filtered.length / PER_PAGE);
+    const pageItems = filtered.slice((currentPage - 1) * PER_PAGE, currentPage * PER_PAGE);
+
+    grid.innerHTML = pageItems.map(item => {
+      const tags = (item.tags || []).slice(0, 3).map(t =>
+        `<span class="tile-meta-item">${t}</span>`).join('');
+      return `
+        <div class="byo-tile" onclick="window.open('${item.url}','_blank')">
+          <div class="tile-header">
+            <span class="lang-badge ${langClass(item.language)}">${item.language}</span>
+            <span class="diff-badge diff-${item.difficulty}">${item.difficulty}</span>
+            ${item.translatable ? '<span class="tile-translatable">→ C++</span>' : ''}
+          </div>
+          <div class="tile-title">${item.title}</div>
+          <div class="tile-desc">${item.description}</div>
+          <div class="tile-footer">
+            <div class="tile-meta">${tags}<span class="tile-meta-item">· ${item.length}</span></div>
+            <a class="tile-link" href="${item.url}" target="_blank" onclick="event.stopPropagation()">→</a>
+          </div>
+        </div>`;
+    }).join('');
+
+    renderPagination(total);
+  }
+
+  function renderPagination(total) {
+    const el = document.getElementById('pagination');
+    if (total <= 1) { el.innerHTML = ''; return; }
+
+    let html = `<button class="page-btn" onclick="goPage(${currentPage-1})" ${currentPage===1?'disabled':''}>← Prev</button>`;
+    for (let i = 1; i <= total; i++) {
+      if (total > 7 && i > 2 && i < total-1 && Math.abs(i - currentPage) > 1) {
+        if (i === 3 || i === total-2) html += `<span class="page-ellipsis">…</span>`;
+        continue;
+      }
+      html += `<button class="page-btn ${i===currentPage?'active':''}" onclick="goPage(${i})">${i}</button>`;
+    }
+    html += `<button class="page-btn" onclick="goPage(${currentPage+1})" ${currentPage===total?'disabled':''}>Next →</button>`;
+    el.innerHTML = html;
+  }
+
+  window.goPage = function(p) {
+    const total = Math.ceil(filtered.length / PER_PAGE);
+    if (p < 1 || p > total) return;
+    currentPage = p;
+    renderTiles();
+    document.getElementById('tile-grid').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
+  // ── Controls ──────────────────────────────────────────────
+  document.querySelectorAll('.filter-btn[data-ft]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const ft = btn.dataset.ft;
+      document.querySelectorAll(`[data-ft="${ft}"]`).forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeFilters[ft] = btn.dataset.val;
+      applyFilters();
+    });
+  });
+
+  document.getElementById('byo-search').addEventListener('input', applyFilters);
+  document.getElementById('cat-select').addEventListener('change', applyFilters);
+  </script>
+</body>
+</html>

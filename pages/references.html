@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>References — The CPP Grind</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/main.css">
+  <style>
+    .page-header { padding: 60px 24px 40px; border-bottom: 1px solid var(--border); }
+    .page-header h1 { font-family: var(--font-serif); font-size: clamp(28px,4vw,44px); font-weight: 400; }
+    .page-header p { font-size: 14px; color: var(--text2); margin-top: 12px; max-width: 600px; }
+
+    .ref-body { max-width: var(--max-w); margin: 0 auto; padding: 60px 24px; }
+
+    .ref-section { margin-bottom: 60px; }
+    .ref-section-label {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+      color: var(--accent); margin-bottom: 20px; text-transform: uppercase;
+    }
+
+    /* ── Interview section placeholder ── */
+    .coming-soon-block {
+      background: var(--bg2); border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: var(--radius); padding: 20px 24px;
+      margin-bottom: 16px;
+    }
+    .coming-soon-block h3 {
+      font-size: 14px; font-weight: 700; margin-bottom: 6px;
+    }
+    .coming-soon-block p {
+      font-size: 13px; color: var(--text2); line-height: 1.7;
+    }
+    .coming-soon-note {
+      font-size: 12px; color: var(--text3); margin-top: 8px;
+      font-style: italic;
+    }
+
+    /* ── Question list (for interview Q&A) ── */
+    .q-list { display: flex; flex-direction: column; gap: 8px; }
+    .q-item {
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: var(--radius); overflow: hidden;
+    }
+    .q-toggle {
+      width: 100%; background: none; border: none;
+      padding: 14px 20px; text-align: left;
+      font-family: var(--font-mono); font-size: 13px;
+      color: var(--text); cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center;
+      transition: background var(--transition);
+    }
+    .q-toggle:hover { background: var(--bg3); }
+    .q-toggle .q-arrow {
+      color: var(--text3); font-size: 11px; flex-shrink: 0;
+      transition: transform 0.18s;
+    }
+    .q-item.open .q-arrow { transform: rotate(90deg); }
+    .q-body {
+      display: none; padding: 16px 20px;
+      font-size: 13px; color: var(--text2); line-height: 1.8;
+      border-top: 1px solid var(--border);
+    }
+    .q-item.open .q-body { display: block; }
+    .q-body code {
+      font-family: var(--font-mono); font-size: 12px;
+      background: var(--bg3); padding: 2px 6px;
+      border-radius: 3px; color: var(--green);
+      border: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand-wrap">
+        <button class="theme-toggle" type="button" role="switch" aria-label="Toggle light mode" aria-checked="false"></button>
+        <a href="../index.html" class="logo"><span class="logo-bracket">//</span> The CPP Grind</a>
+      </div>
+      <nav class="main-nav">
+        <a href="../index.html">Home</a>
+        <div class="nav-group">
+          <button>Learn</button>
+          <div class="dropdown-panel">
+            <a href="roadmap.html">Roadmap</a>
+            <a href="articles.html">Articles</a>
+          </div>
+        </div>
+        <div class="nav-group">
+          <button>Build</button>
+          <div class="dropdown-panel">
+            <a href="projects.html">Projects</a>
+            <a href="games.html">Games</a>
+            <a href="build-your-own.html">Build Your Own</a>
+          </div>
+        </div>
+        <div class="nav-group">
+          <button>Explore</button>
+          <div class="dropdown-panel">
+            <a href="references.html">References</a>
+            <a href="resources.html">Resources</a>
+          </div>
+        </div>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="nav-contact">Contact</a>
+      </nav>
+      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <div class="page-header">
+    <div class="section-inner">
+      <h1>References</h1>
+      <p>Quick-lookup syntax, interview prep, and the stuff you look up ten times a week.</p>
+    </div>
+  </div>
+
+  <div class="ref-body">
+
+    <!-- ── C++ Interview Prep ── -->
+    <div class="ref-section">
+      <div class="ref-section-label">// C++ Interview Prep</div>
+
+      <div class="coming-soon-block">
+        <h3>Interview Questions</h3>
+        <p>
+          A curated set of C++ interview questions — from memory model and RAII to virtual dispatch,
+          move semantics, and undefined behavior. I'll write a proper section on this with
+          explanations and examples.
+        </p>
+        <p class="coming-soon-note">// I'll write a full section on this sometime. Questions from my documentation notes go here.</p>
+        <!-- Replace the href below with the actual PDF link when you have it -->
+        <p style="margin-top:12px;font-size:12px;color:var(--text2)">
+          My notes PDF: <a href="../documentation/C++%20Interview%20Notes.pdf" style="color:var(--blue)" target="_blank" rel="noopener">C++ Interview Notes (PDF) →</a>
+        </p>
+      </div>
+
+      <!-- Paste your interview Q&A items here as .q-item blocks.
+           Each one is a collapsible question → answer. -->
+      <div class="q-list" id="interview-qs">
+
+        <!-- Example format — replace with your real questions:
+        <div class="q-item">
+          <button class="q-toggle">
+            What is RAII and why does C++ rely on it?
+            <span class="q-arrow">▶</span>
+          </button>
+          <div class="q-body">
+            RAII stands for Resource Acquisition Is Initialization...
+          </div>
+        </div>
+        -->
+
+        <div class="q-item">
+          <button class="q-toggle">
+            // Awaiting Content — interview questions from documentation go here
+            <span class="q-arrow">▶</span>
+          </button>
+          <div class="q-body">
+            Paste your interview Q&amp;A content from documentation here.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── Placeholder for more reference sections ── -->
+    <div class="ref-section">
+      <div class="ref-section-label">// Quick Reference</div>
+      <p style="color:var(--text3);font-size:13px">// Awaiting Content — syntax cheat sheets, STL quick refs, compiler flags</p>
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span class="footer-logo">The CPP Grind</span>
+      <span class="footer-note">Built while learning. Improving as I go.</span>
+      <div class="footer-links">
+        <a href="https://github.com/Cooper-Bugg" target="_blank">GitHub</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+  // Collapsible Q&A items
+  document.querySelectorAll('.q-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.closest('.q-item').classList.toggle('open');
+    });
+  });
+  </script>
+</body>
+</html>
