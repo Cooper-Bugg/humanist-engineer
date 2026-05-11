@@ -149,6 +149,50 @@ window.getDailyItem = function(arr) {
 };
 
 // ============================================
+// CALLOUT LEGEND WIDGET
+// Injected on every page — hover the ? to see callout type definitions
+// ============================================
+function initCalloutLegend() {
+  const el = document.createElement('div');
+  el.className = 'callout-legend';
+  el.innerHTML = `
+    <div class="legend-panel">
+      <div class="legend-title">// Callout Guide</div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--yellow)"></div>
+        <div class="legend-item-text">
+          <div class="legend-item-label">Quote</div>
+          <div class="legend-item-desc">Direct quotes from the text</div>
+        </div>
+      </div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--blue)"></div>
+        <div class="legend-item-text">
+          <div class="legend-item-label">Exercise</div>
+          <div class="legend-item-desc">Coding challenges to try yourself</div>
+        </div>
+      </div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--green)"></div>
+        <div class="legend-item-text">
+          <div class="legend-item-label">Tip</div>
+          <div class="legend-item-desc">Useful tricks and best practices</div>
+        </div>
+      </div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--warning)"></div>
+        <div class="legend-item-text">
+          <div class="legend-item-label">Danger</div>
+          <div class="legend-item-desc">Gotchas, pitfalls, undefined behavior</div>
+        </div>
+      </div>
+    </div>
+    <button class="legend-trigger" aria-label="Show callout guide">?</button>
+  `;
+  document.body.appendChild(el);
+}
+
+// ============================================
 // INIT
 // ============================================
 document.addEventListener('DOMContentLoaded', () => {
@@ -158,4 +202,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initSpoilers();
   initMobileMenu();
   initDropdowns();
+  initCalloutLegend();
 });

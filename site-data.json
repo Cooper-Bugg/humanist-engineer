@@ -261,6 +261,17 @@
       "recommended": false
     },
     {
+      "id": "helsinki-programming-mooc",
+      "title": "University of Helsinki — Programming MOOC",
+      "url": "https://programming-26.mooc.fi",
+      "description": "Free, self-paced programming course from the University of Helsinki — one of the most thorough beginner courses available. Covers programming fundamentals from the ground up with a heavy emphasis on problem-solving and clean code. Language-agnostic thinking that transfers directly to C++.",
+      "tags": ["beginner", "fundamentals", "mooc", "problem-solving", "free-course", "university"],
+      "type": "course",
+      "level": "beginner",
+      "format": "free",
+      "recommended": false
+    },
+    {
       "id": "lunarvim",
       "title": "LunarVim",
       "url": "https://github.com/LunarVim/LunarVim",

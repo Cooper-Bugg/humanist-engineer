@@ -129,6 +129,39 @@
       <p>If you have never programmed before — not even a "Hello, World" — start here. Everything on this site assumes you can read a terminal, understand what a file path is, and have a rough idea of what happens when you run a program. This chapter fills those gaps before the real C++ work begins.</p>
       <p>If you've coded before in any language, even a little, you can skip straight to <a href="ch-01-overview-of-cpp.html">Chapter 1</a>.</p>
 
+      <h2>How to read these notes</h2>
+      <p>Throughout the articles you'll see color-coded callout blocks. Each type means something specific:</p>
+
+      <div class="grind-callout callout-quote">
+        <div class="callout-header">
+          <span class="material-symbols-rounded">format_quote</span> Quote
+        </div>
+        <p>"The input stream reads characters until it encounters whitespace — the rest stays buffered for the next read." — Roberts, Ch. 4</p>
+      </div>
+
+      <div class="grind-callout callout-exercise">
+        <div class="callout-header">
+          <span class="material-symbols-rounded">code</span> Exercise
+        </div>
+        <p>Write a function that accepts a string reference and reverses it in place without using any standard library algorithms.</p>
+      </div>
+
+      <div class="grind-callout callout-tip">
+        <div class="callout-header">
+          <span class="material-symbols-rounded">lightbulb</span> Tip
+        </div>
+        <p>Passing by <code>const</code> reference is almost always faster for large objects since it avoids copying data entirely.</p>
+      </div>
+
+      <div class="grind-callout callout-danger">
+        <div class="callout-header">
+          <span class="material-symbols-rounded">warning</span> Danger
+        </div>
+        <p>Reading from an uninitialized variable is undefined behavior — the compiler is allowed to do anything, including appearing to work correctly.</p>
+      </div>
+
+      <p>The <strong>?</strong> button in the bottom-right corner shows this guide on any page, so you never need to come back here to look it up.</p>
+
       <h2>The most important thing to read first</h2>
       <p>MIT's "Missing Semester" course covers everything a CS degree assumes you already know but never actually teaches: the shell, text editors, version control, debugging, and how to think about a computer as a tool. It is free, short, and genuinely one of the best things you can do before writing your first C++ program.</p>
 
