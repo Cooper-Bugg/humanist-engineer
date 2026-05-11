@@ -8,7 +8,7 @@ function initCookieNotice() {
   const notice = document.createElement('div');
   notice.className = 'cookie-notice';
   notice.innerHTML = `
-    <span>This site saves your progress locally. Keep cookies/localStorage enabled to preserve it. <a href="pages/about.html#privacy" style="color:var(--blue)">Learn more</a></span>
+    <span>This site saves your progress locally. No tracking, no data sent anywhere.</span>
     <button onclick="acceptCookies()">Got it</button>
   `;
   document.body.appendChild(notice);

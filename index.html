@@ -3,6 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The C++ Grind — a C++ learning journal built in public. Structured articles, real projects, and daily challenges from zero to systems programming.">
+  <meta property="og:title" content="The C++ Grind">
+  <meta property="og:description" content="A C++ learning journal built in public. Structured articles, real projects, and daily challenges from zero to systems programming.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <title>The C++ Grind</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,19 +22,19 @@
     <div class="header-inner">
       <div class="brand-wrap">
         <button class="theme-toggle" type="button" role="switch" aria-label="Toggle light mode" aria-checked="false"><span class="material-symbols-rounded toggle-dark">dark_mode</span><span class="material-symbols-rounded toggle-light">light_mode</span></button>
-  <a href="pages/intro.html" class="logo">
+  <a href="index.html" class="logo">
           <span class="logo-bracket">//</span> The C++ Grind
         </a>
       </div>
       <nav class="main-nav">
         <a href="index.html">Home</a>
+        <a href="pages/intro.html">Intro</a>
         <div class="nav-group">
           <button>Learn</button>
           <div class="dropdown-panel">
-            <a href="pages/intro.html">Intro</a>
             <a href="pages/roadmap.html">Roadmap</a>
             <a href="pages/articles.html">Articles</a>
-            <a href="pages/games.html">Games</a>
+            <a href="pages/games.html">Daily Games</a>
           </div>
         </div>
         <div class="nav-group">
@@ -61,8 +67,11 @@
         <h1 class="hero-title">Learn C++ by<br><em>building things.</em></h1>
         <p class="hero-sub">Structured articles, real projects, and daily challenges — everything you need to go from first compile to systems programming.</p>
         <div class="hero-cta">
-          <a href="pages/roadmap.html" class="btn-primary">Start Here</a>
-          <a href="pages/games.html" class="btn-primary">Daily Challenge →</a>
+          <div class="hero-cta-main">
+            <a href="pages/intro.html" class="btn-primary">Never coded?</a>
+            <a href="pages/roadmap.html" class="btn-primary">Start the Roadmap →</a>
+          </div>
+          <a href="pages/games.html" class="hero-cta-sub">→ Play today's challenge</a>
         </div>
         <div class="hero-snippet">
           <pre><code><span class="c-comment">// your first program</span>
@@ -145,7 +154,7 @@
           <a href="pages/articles.html" class="see-all">All articles →</a>
         </div>
         <div class="article-list">
-          <a href="#" class="article-item">
+          <a href="articles/chapters/ch-01-overview-of-cpp.html" class="article-item">
             <span class="article-tag">Ch. 1</span>
             <span class="article-title">Overview of C++: Programs, Compilation, and Your First Build</span>
             <span class="article-date">May 2026</span>

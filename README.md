@@ -1,6 +1,8 @@
 
 # The C++ Grind
 
+Live site: https://cooper-bugg.github.io/TheCppGrind/
+
 Anyone can use this to learn how to code — not just C++. The projects, roadmap, and build challenges are language-agnostic at the concept level. Every project here works as a blueprint you can implement in any language. The C++ code is the reference; the patterns are universal.
 
 This repo is intentionally simple — plain HTML/CSS/JS — so the content is easy to edit and the site ships on GitHub Pages with no build step.
@@ -73,3 +75,4 @@ No analytics and no server-side tracking.
 
 - This site is a learning journal, not a copy of LearnCpp/Roberts/other resources.
 - The C++ projects live in [Start-Learning-Cpp](https://github.com/Cooper-Bugg/Start-Learning-Cpp) — check that repo for runnable code.
+- AI is not used in the creation of C++ code or articles only used to build HTML/CSS/JS
