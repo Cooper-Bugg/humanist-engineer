@@ -22,5 +22,8 @@ venv/
 # Local dev servers / misc
 *.log
 
-# Optional: ignore temporary exports (keep PDFs and site assets tracked)
+# Private local reference library. Public docs live in docs/.
+.docs/
+
+# Optional: ignore temporary exports
 *.tmp

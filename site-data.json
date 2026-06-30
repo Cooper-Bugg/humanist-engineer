@@ -3,7 +3,7 @@
     "version": "1.0",
     "generated": "2026-05-10",
     "note": "AI-generated tags — may be inaccurate. Contact page to report issues.",
-    "site": "The CPP Grind"
+    "site": "The Humanist Engineer"
   },
 
   "references": [
@@ -1366,11 +1366,11 @@
       "status": "complete"
     },
     {
-      "id": "thecppgrind",
-      "title": "The CPP Grind",
-      "url": "https://github.com/Cooper-Bugg/thecppgrind",
-      "description": "This site. C++ learning platform with articles, projects, daily games, and curated resources. Built while learning C++.",
-      "tags": ["javascript", "html", "css", "education", "c++"],
+      "id": "humanist-engineer",
+      "title": "The Humanist Engineer",
+      "url": "https://github.com/Cooper-Bugg/humanist-engineer.github.io",
+      "description": "This site. A static personal learning hub for systems programming, ECE prep, Linux, books, documents, and projects.",
+      "tags": ["javascript", "html", "css", "education", "systems"],
       "language": "javascript",
       "phase": "ongoing",
       "status": "active"
@@ -1477,31 +1477,60 @@
     }
   ],
 
+  "books": [
+    { "id": "csapp", "title": "Computer Systems: A Programmer's Perspective", "author": "Randal E. Bryant & David R. O'Hallaron", "category": "Computer Systems & Hardware", "tags": ["systems", "hardware", "c", "memory"], "status": "owned" },
+    { "id": "cod", "title": "Computer Organization and Design", "author": "David A. Patterson & John L. Hennessy", "category": "Computer Systems & Hardware", "tags": ["architecture", "assembly", "hardware"], "status": "owned" },
+    { "id": "kr", "title": "The C Programming Language", "author": "Brian W. Kernighan & Dennis M. Ritchie", "category": "Software Engineering & Core Programming", "tags": ["c", "unix", "fundamentals"], "status": "owned" },
+    { "id": "roberts", "title": "Programming Abstractions in C++", "author": "Eric Roberts", "category": "Software Engineering & Core Programming", "tags": ["c++", "abstractions", "data-structures"], "status": "owned" },
+    { "id": "plp", "title": "Programming Language Pragmatics", "author": "Michael L. Scott", "category": "Software Engineering & Core Programming", "tags": ["languages", "compilers", "theory"], "status": "owned" },
+    { "id": "clean-code", "title": "Clean Code", "author": "Robert C. Martin", "category": "Software Engineering & Core Programming", "tags": ["software-engineering", "craft"], "status": "owned" },
+    { "id": "making-embedded", "title": "Making Embedded Systems", "author": "Elecia White", "category": "Embedded & Systems Programming", "tags": ["embedded", "firmware", "systems"], "status": "owned" },
+    { "id": "tdd-embedded-c", "title": "Test-Driven Development for Embedded C", "author": "James W. Grenning", "category": "Embedded & Systems Programming", "tags": ["embedded", "testing", "c"], "status": "owned" },
+    { "id": "programming-embedded", "title": "Programming Embedded Systems in C and C++", "author": "Michael Barr", "category": "Embedded & Systems Programming", "tags": ["embedded", "c", "c++"], "status": "owned" },
+    { "id": "avr", "title": "Make: AVR Programming", "author": "Elliot Williams", "category": "Embedded & Systems Programming", "tags": ["avr", "microcontrollers", "electronics"], "status": "owned" },
+    { "id": "circuits", "title": "Electric Circuits", "author": "James W. Nilsson & Susan Riedel", "category": "Electronics & Math", "tags": ["circuits", "ece", "electronics"], "status": "owned" },
+    { "id": "communication-systems", "title": "Communication Systems", "author": "Simon Haykin", "category": "Electronics & Math", "tags": ["communications", "signals", "ece"], "status": "owned" },
+    { "id": "matlab", "title": "MATLAB: An Introduction with Applications", "author": "Amos Gilat", "category": "Electronics & Math", "tags": ["matlab", "math", "engineering"], "status": "owned" },
+    { "id": "dynamic-programming", "title": "Applied Dynamic Programming", "author": "Richard Bellman & Stuart Dreyfus", "category": "Electronics & Math", "tags": ["optimization", "math", "dynamic-programming"], "status": "owned" }
+  ],
+
+  "links": [
+    { "title": "Compiler Explorer", "url": "https://godbolt.org", "category": "Systems & C++", "description": "Inspect compiler output and compare toolchains.", "tags": ["compiler", "assembly", "c++"] },
+    { "title": "CppReference", "url": "https://en.cppreference.com", "category": "Systems & C++", "description": "Reference for C++ language and standard library behavior.", "tags": ["reference", "c++"] },
+    { "title": "Operating Systems: Three Easy Pieces", "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/", "category": "Systems & C++", "description": "Free operating systems textbook and systems reference.", "tags": ["os", "systems"] },
+    { "title": "MIT Linear Algebra", "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/", "category": "Undergrad / Master's Math & ECE", "description": "Linear algebra lectures and materials.", "tags": ["math", "linear-algebra"] },
+    { "title": "All About Circuits", "url": "https://www.allaboutcircuits.com/textbook/", "category": "Undergrad / Master's Math & ECE", "description": "Electronics textbook and reference material.", "tags": ["circuits", "electronics"] },
+    { "title": "Hyprland Wiki", "url": "https://wiki.hyprland.org/", "category": "Linux & Dotfiles", "description": "Configuration reference for the Hyprland compositor.", "tags": ["linux", "hyprland"] },
+    { "title": "Neovim Documentation", "url": "https://neovim.io/doc/", "category": "Linux & Dotfiles", "description": "Editor documentation and Lua configuration reference.", "tags": ["neovim", "lua"] },
+    { "title": "Writing for Developers", "url": "https://developers.google.com/tech-writing", "category": "General Wisdom & Writing", "description": "Technical writing lessons and guidelines.", "tags": ["writing", "communication"] },
+    { "title": "COD5E Exercises", "url": "https://github.com/Cooper-Bugg/cod5e-exercises", "category": "Project Repositories", "description": "Computer Organization and Design 5e exercise solutions with supporting architecture references.", "tags": ["computer-architecture", "mips", "ece", "solutions"] },
+    { "title": "Learning Center", "url": "https://github.com/Cooper-Bugg/Learning-Center", "category": "Project Repositories", "description": "Cooper's learning hub layered on top of a Build Your Own X fork, with added books, learning paths, and curated CS/systems/math resources.", "tags": ["learning", "systems", "resources", "fork"] },
+    { "title": "Build Your Own X upstream", "url": "https://github.com/codecrafters-io/build-your-own-x", "category": "Project Repositories", "description": "Main fork parent for the Build Your Own tutorial catalog used by Learning Center.", "tags": ["build-your-own", "projects", "upstream"] },
+    { "title": "Discord Bot", "url": "https://github.com/Cooper-Bugg/Discord-Bot", "category": "Project Repositories", "description": "Python Discord bot with games, weather, NASA APOD, timers, monitoring, and utility commands.", "tags": ["python", "discord", "bot"] },
+    { "title": "Bugg NVIM", "url": "https://github.com/Cooper-Bugg/Bugg-NVIM", "category": "Linux & Dotfiles", "description": "Neovim configuration resource for the terminal-centric toolchain.", "tags": ["neovim", "lua", "editor"] },
+    { "title": "dotfiles-sh", "url": "https://github.com/Cooper-Bugg/dotfiles-sh", "category": "Linux & Dotfiles", "description": "Shell and dotfiles resource for Linux customization.", "tags": ["dotfiles", "shell", "linux"] }
+  ],
+
+  "documents": [
+    { "title": "Reading List", "path": "../docs/books/readinglist.md", "kind": "markdown", "category": "books" },
+    { "title": "Project Repository Reference Index", "path": "../docs/refs/projects/repositories.md", "kind": "markdown", "category": "project-refs" },
+    { "title": "COD5E README Copy", "path": "../docs/refs/projects/cod5e-exercises.md", "kind": "markdown", "category": "project-refs" },
+    { "title": "Learning Center README Copy", "path": "../docs/refs/projects/learning-center.md", "kind": "markdown", "category": "project-refs" },
+    { "title": "Discord Bot README Copy", "path": "../docs/refs/projects/discord-bot.md", "kind": "markdown", "category": "project-refs" },
+    { "title": "Private Reference Archive", "path": "", "kind": "local", "category": "private" },
+    { "title": "MS Prep Roadmap", "path": "../docs/school/ms_prep/roadmap.md", "kind": "markdown", "category": "school" },
+    { "title": "Resume", "path": "../images/Resume_CHB.pdf", "kind": "pdf", "category": "profile" }
+  ],
+
   "nav": {
     "items": [
       { "label": "Home", "url": "index.html" },
-      {
-        "label": "Learn",
-        "dropdown": [
-          { "label": "Roadmap", "url": "pages/roadmap.html" },
-          { "label": "Articles", "url": "pages/articles.html" }
-        ]
-      },
-      {
-        "label": "Build",
-        "dropdown": [
-          { "label": "Projects", "url": "pages/projects.html" },
-          { "label": "Games", "url": "pages/games.html" },
-          { "label": "Build Your Own", "url": "pages/build-your-own.html" }
-        ]
-      },
-      {
-        "label": "Explore",
-        "dropdown": [
-          { "label": "References", "url": "pages/references.html" },
-          { "label": "Resources", "url": "pages/resources.html" }
-        ]
-      },
+      { "label": "Roadmap", "url": "pages/roadmap.html" },
+      { "label": "Articles", "url": "pages/articles.html" },
+      { "label": "Projects", "url": "pages/projects.html" },
+      { "label": "Books", "url": "pages/books.html" },
+      { "label": "Links", "url": "pages/links.html" },
+      { "label": "Documents", "url": "pages/documents.html" },
       { "label": "About", "url": "pages/about.html" },
       { "label": "Contact", "url": "pages/contact.html" }
     ]

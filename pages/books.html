@@ -3,19 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Projects by Cooper Huntington-Bugg: systems programming, computer architecture, static sites, bots, and learning tools.">
-  <meta property="og:description" content="Systems, C++, architecture, bot, and learning-tool projects from The Humanist Engineer.">
+  <meta name="description" content="Owned technical library for The Humanist Engineer: systems, embedded, ECE, math, and programming books.">
+  <meta property="og:description" content="Owned technical library for The Humanist Engineer.">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
-  <title>Projects — The Humanist Engineer</title>
+  <title>Books — The Humanist Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,500,0,0" rel="stylesheet">
   <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
-
   <header class="site-header">
     <div class="header-inner">
       <div class="brand-wrap">
@@ -45,9 +44,9 @@
 
   <div class="page-header terminal-page-header">
     <div class="section-inner">
-      <div class="eyebrow">// project archive</div>
-      <h1>Projects</h1>
-      <p>Systems exercises, architecture work, static-site tooling, bots, and learning-center repositories. The C++ work remains preserved as a reference track inside the broader engineering portfolio.</p>
+      <div class="eyebrow">// owned library</div>
+      <h1>Books</h1>
+      <p>Personal technical library with local progress tracking. These are owned books, not purchase recommendations.</p>
     </div>
   </div>
 
@@ -55,17 +54,17 @@
     <div class="data-toolbar">
       <label class="search-field">
         <span class="material-symbols-rounded" aria-hidden="true">search</span>
-        <input id="project-search" type="search" placeholder="Search projects, tags, language..." autocomplete="off">
+        <input id="book-search" type="search" placeholder="Search title, author, tag..." autocomplete="off">
       </label>
-      <div id="project-filters" class="filter-row" aria-label="Project filters"></div>
+      <div id="book-filters" class="filter-row" aria-label="Book category filters"></div>
     </div>
-    <div id="projects-root" class="link-sections"></div>
+    <div id="books-root" class="book-sections"></div>
   </main>
 
   <footer class="site-footer">
     <div class="footer-inner">
       <span class="footer-logo">The Humanist Engineer</span>
-      <span class="footer-note">Systems, ECE, Linux, books, and projects.</span>
+      <span class="footer-note">Built while learning. Improving as I go.</span>
       <div class="footer-links">
         <a href="https://github.com/Cooper-Bugg" target="_blank" rel="noopener">GitHub</a>
         <a href="contact.html">Contact</a>
@@ -76,71 +75,72 @@
   <script src="../js/main.js"></script>
   <script src="../js/navigation.js"></script>
   <script>
-    const root = document.getElementById('projects-root');
-    const search = document.getElementById('project-search');
-    const filters = document.getElementById('project-filters');
-    let projects = [];
-    let active = 'all';
+    const booksRoot = document.getElementById('books-root');
+    const search = document.getElementById('book-search');
+    const filters = document.getElementById('book-filters');
+    let books = [];
+    let activeCategory = 'all';
 
-    function projectGroup(project) {
-      if (project.phase === 'academic') return 'Academic / ECE';
-      if (project.language === 'javascript') return 'Web / Site';
-      if ((project.tags || []).includes('systems')) return 'Systems / C++';
-      return 'Project Work';
+    function isRead(id) {
+      return localStorage.getItem(`book:${id}:read`) === '1';
     }
 
-    function matches(project) {
+    function toggleRead(id) {
+      localStorage.setItem(`book:${id}:read`, isRead(id) ? '0' : '1');
+      renderBooks();
+    }
+
+    function matchesBook(book) {
       const query = search.value.trim().toLowerCase();
-      const haystack = [project.title, project.description, project.language, project.phase, ...(project.tags || [])].join(' ').toLowerCase();
-      return (active === 'all' || projectGroup(project) === active) && (!query || haystack.includes(query));
+      const haystack = [book.title, book.author, book.category, ...(book.tags || [])].join(' ').toLowerCase();
+      return (activeCategory === 'all' || book.category === activeCategory) && (!query || haystack.includes(query));
     }
 
     function renderFilters() {
-      const groups = ['all', ...new Set(projects.map(projectGroup))];
-      filters.innerHTML = groups.map(group => `<button class="filter-btn${group === active ? ' active' : ''}" type="button" data-group="${group}">${group}</button>`).join('');
+      const categories = ['all', ...new Set(books.map(book => book.category))];
+      filters.innerHTML = categories.map(category => `<button class="filter-btn${category === activeCategory ? ' active' : ''}" type="button" data-category="${category}">${category}</button>`).join('');
       filters.querySelectorAll('button').forEach(button => {
         button.addEventListener('click', () => {
-          active = button.dataset.group;
+          activeCategory = button.dataset.category;
           renderFilters();
-          renderProjects();
+          renderBooks();
         });
       });
     }
 
-    function renderProjects() {
-      const grouped = projects.filter(matches).reduce((acc, project) => {
-        (acc[projectGroup(project)] ||= []).push(project);
+    function renderBooks() {
+      const grouped = books.filter(matchesBook).reduce((acc, book) => {
+        (acc[book.category] ||= []).push(book);
         return acc;
       }, {});
-      root.innerHTML = Object.entries(grouped).map(([group, items]) => `
+      booksRoot.innerHTML = Object.entries(grouped).map(([category, items]) => `
         <section class="data-section">
-          <h2>${group}</h2>
-          <div class="link-grid">
-            ${items.map(project => `
-              <a class="link-card" href="${project.url}" target="_blank" rel="noopener">
-                <span class="link-arrow">↗</span>
-                <h3>${project.title}</h3>
-                <p>${project.description}</p>
-                <div class="tag-row">
-                  <span>${project.language || 'mixed'}</span>
-                  <span>${project.status || 'active'}</span>
-                  ${(project.tags || []).slice(0, 4).map(tag => `<span>${tag}</span>`).join('')}
-                </div>
-              </a>
+          <h2>${category}</h2>
+          <div class="book-grid">
+            ${items.map(book => `
+              <article class="book-card${isRead(book.id) ? ' is-read' : ''}">
+                <button class="book-progress" type="button" data-book="${book.id}" aria-label="Toggle reading progress">${isRead(book.id) ? 'read' : 'todo'}</button>
+                <h3>${book.title}</h3>
+                <p>${book.author}</p>
+                <div class="tag-row">${book.tags.map(tag => `<span>${tag}</span>`).join('')}</div>
+              </article>
             `).join('')}
           </div>
         </section>
-      `).join('') || '<p class="empty-state">// no matching projects</p>';
+      `).join('') || '<p class="empty-state">// no matching books</p>';
+      booksRoot.querySelectorAll('.book-progress').forEach(button => {
+        button.addEventListener('click', () => toggleRead(button.dataset.book));
+      });
     }
 
     fetch('../site-data.json')
       .then(response => response.json())
       .then(data => {
-        projects = data.projects || [];
+        books = data.books || [];
         renderFilters();
-        renderProjects();
+        renderBooks();
       });
-    search.addEventListener('input', renderProjects);
+    search.addEventListener('input', renderBooks);
   </script>
 </body>
 </html>

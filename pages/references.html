@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <meta name="description" content="C++ quick references, cheat sheets, and lookup tables from The C++ Grind.">  <meta property="og:description" content="C++ quick references, cheat sheets, and lookup tables from The C++ Grind.">  <meta property="og:type" content="website">  <meta name="twitter:card" content="summary">  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
-  <title>References — The C++ Grind</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <meta name="description" content="C++ quick references, cheat sheets, and lookup tables from The Humanist Engineer.">  <meta property="og:description" content="C++ quick references, cheat sheets, and lookup tables from The Humanist Engineer.">  <meta property="og:type" content="website">  <meta name="twitter:card" content="summary">  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <title>References — The Humanist Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,500,0,0" rel="stylesheet">
@@ -79,7 +79,7 @@
     <div class="header-inner">
       <div class="brand-wrap">
         <button class="theme-toggle" type="button" role="switch" aria-label="Toggle light mode" aria-checked="false"><span class="material-symbols-rounded toggle-dark">dark_mode</span><span class="material-symbols-rounded toggle-light">light_mode</span></button>
-  <a href="../index.html" class="logo"><span class="logo-bracket">//</span> The C++ Grind</a>
+  <a href="../index.html" class="logo"><span class="logo-bracket">//</span> The Humanist Engineer</a>
       </div>
       <nav class="main-nav">
         <a href="../index.html">Home</a>
@@ -103,7 +103,9 @@
           <button>Explore</button>
           <div class="dropdown-panel">
             <a href="references.html">References</a>
-            <a href="resources.html">Resources</a>
+            <a href="books.html">Books</a>
+            <a href="links.html">Links</a>
+            <a href="documents.html">Documents</a>
           </div>
         </div>
         <a href="about.html">About</a>
@@ -133,10 +135,9 @@
           move semantics, and undefined behavior. I'll write a proper section on this with
           explanations and examples.
         </p>
-        <p class="coming-soon-note">// I'll write a full section on this sometime. Questions from my documentation notes go here.</p>
-        <!-- Replace the href below with the actual PDF link when you have it -->
+        <p class="coming-soon-note">// Interview notes and quick-reference material are indexed locally while citation cleanup is in progress.</p>
         <p style="margin-top:12px;font-size:12px;color:var(--text2)">
-          My notes PDF: <a href="../documentation/C++%20Interview%20Notes.pdf" style="color:var(--blue)" target="_blank" rel="noopener">C++ Interview Notes (PDF) →</a>
+          Local-only: C++ Interview Notes PDF is kept under ignored <code>docs/</code> until it is ready to publish.
         </p>
       </div>
 
@@ -158,11 +159,11 @@
 
         <div class="q-item">
           <button class="q-toggle">
-            // Awaiting Content — interview questions from documentation go here
+            // Local Q&A index pending citation cleanup
             <span class="q-arrow">▶</span>
           </button>
           <div class="q-body">
-            Paste your interview Q&amp;A content from documentation here.
+            Notes stay local for now. Public references should link to source material, not private PDFs.
           </div>
         </div>
 
@@ -172,14 +173,14 @@
     <!-- ── Placeholder for more reference sections ── -->
     <div class="ref-section">
       <div class="ref-section-label">// Quick Reference</div>
-      <p style="color:var(--text3);font-size:13px">// Awaiting Content — syntax cheat sheets, STL quick refs, compiler flags</p>
+    <p style="color:var(--text3);font-size:13px">// Public quick references will be added here as citation-safe pages. Local PDFs remain indexed in Documents.</p>
     </div>
 
   </div>
 
   <footer class="site-footer">
     <div class="footer-inner">
-      <span class="footer-logo">The C++ Grind</span>
+      <span class="footer-logo">The Humanist Engineer</span>
       <span class="footer-note">Built while learning. Improving as I go.</span>
       <div class="footer-links">
         <a href="https://github.com/Cooper-Bugg" target="_blank">GitHub</a>
@@ -189,6 +190,7 @@
   </footer>
 
   <script src="../js/main.js"></script>
+  <script src="../js/navigation.js"></script>
   <script>
   // Collapsible Q&A items
   document.querySelectorAll('.q-toggle').forEach(btn => {

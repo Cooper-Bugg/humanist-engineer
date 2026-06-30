@@ -1,4 +1,4 @@
-// THE CPP GRIND — main.js
+// THE HUMANIST ENGINEER — main.js
 
 // ============================================
 // COOKIE / LOCALSTORAGE NOTICE

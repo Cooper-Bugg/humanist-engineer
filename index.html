@@ -3,52 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="The C++ Grind — a C++ learning journal built in public. Structured articles, real projects, and daily challenges from zero to systems programming.">
-  <meta property="og:title" content="The C++ Grind">
-  <meta property="og:description" content="A C++ learning journal built in public. Structured articles, real projects, and daily challenges from zero to systems programming.">
+  <meta name="description" content="The Humanist Engineer — Cooper Huntington-Bugg's systems, ECE, Linux, books, projects, and learning portfolio.">
+  <meta property="og:title" content="The Humanist Engineer">
+  <meta property="og:description" content="A terminal-centric personal learning hub for systems programming, ECE, Linux, books, and projects.">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <title>The C++ Grind</title>
+  <title>The Humanist Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,500,0,0" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
 </head>
-<body>
+<body class="dashboard-body">
 
   <header class="site-header">
     <div class="header-inner">
       <div class="brand-wrap">
         <button class="theme-toggle" type="button" role="switch" aria-label="Toggle light mode" aria-checked="false"><span class="material-symbols-rounded toggle-dark">dark_mode</span><span class="material-symbols-rounded toggle-light">light_mode</span></button>
-  <a href="index.html" class="logo">
-          <span class="logo-bracket">//</span> The C++ Grind
-        </a>
+        <a href="index.html" class="logo"><span class="logo-bracket">//</span> The Humanist Engineer</a>
       </div>
       <nav class="main-nav">
         <a href="index.html">Home</a>
-        <a href="pages/intro.html">Intro</a>
-        <div class="nav-group">
-          <button>Learn</button>
-          <div class="dropdown-panel">
-            <a href="pages/roadmap.html">Roadmap</a>
-            <a href="pages/articles.html">Articles</a>
-            <a href="pages/games.html">Daily Games</a>
-          </div>
-        </div>
-        <div class="nav-group">
-          <button>Build</button>
-          <div class="dropdown-panel">
-            <a href="pages/projects.html">Projects</a>
-            <a href="pages/build-your-own.html">Build Your Own</a>
-          </div>
-        </div>
+        <a href="pages/roadmap.html">Roadmap</a>
+        <a href="pages/articles.html">Articles</a>
+        <a href="pages/projects.html">Projects</a>
         <div class="nav-group">
           <button>Explore</button>
           <div class="dropdown-panel">
+            <a href="pages/books.html">Books</a>
+            <a href="pages/links.html">Links</a>
+            <a href="pages/documents.html">Documents</a>
             <a href="pages/references.html">References</a>
-            <a href="pages/resources.html">Resources</a>
           </div>
         </div>
         <a href="pages/about.html">About</a>
@@ -58,141 +45,103 @@
     </div>
   </header>
 
-  <main>
+  <main class="desktop-dashboard">
+    <div class="waybar">
+      <span>Antigravity OS v2.0</span>
+      <span>workspace: humanist-engineer</span>
+      <span id="dashboard-clock">--:--</span>
+    </div>
 
-    <!-- Hero -->
-    <section class="hero">
-      <div class="hero-inner">
-        <div class="hero-tag">// C++ from zero</div>
-        <h1 class="hero-title">Learn C++ by<br><em>building things.</em></h1>
-        <p class="hero-sub">Structured articles, real projects, and daily challenges — everything you need to go from first compile to systems programming.</p>
-        <div class="hero-cta">
-          <div class="hero-cta-main">
-            <a href="pages/intro.html" class="btn-primary">Never coded?</a>
-            <a href="pages/roadmap.html" class="btn-primary">Start the Roadmap →</a>
+    <section class="dashboard-grid" aria-label="The Humanist Engineer dashboard">
+      <article class="dash-window profile-window">
+        <div class="window-title">profile</div>
+        <div class="profile-row">
+          <img src="images/Selfie.jpg" alt="Cooper Huntington-Bugg" class="profile-avatar">
+          <div>
+            <h1>Cooper Huntington-Bugg</h1>
+            <p>CS undergrad at OSU Tulsa, graduating Dec 2026. Incoming ECE master's student at CU Boulder, starting Jan 2027.</p>
           </div>
-          <a href="pages/games.html" class="hero-cta-sub">→ Play today's challenge</a>
         </div>
-        <div class="hero-snippet">
-          <pre><code><span class="c-comment">// your first program</span>
-<span class="c-include">#include</span> <span class="c-string">&lt;iostream&gt;</span>
+        <div class="terminal-list">
+          <span><strong>email</strong> cooperehuntington@gmail.com</span>
+          <span><strong>github</strong> Cooper-Bugg</span>
+          <span><strong>focus</strong> systems, embedded, ECE, Linux</span>
+        </div>
+      </article>
 
-<span class="c-type">int</span> <span class="c-fn">main</span>() {
-    std::cout <span class="c-op">&lt;&lt;</span> <span class="c-string">"let the grind begin\n"</span>;
-    <span class="c-kw">return</span> <span class="c-num">0</span>;
-}</code></pre>
+      <article class="dash-window status-window">
+        <div class="window-title">mode</div>
+        <div class="mode-badge">NORMAL</div>
+        <p>Static site, local state only, keyboard-first navigation.</p>
+        <div class="mini-status">press <kbd>?</kbd> for keys · <kbd>:</kbd> for commands</div>
+      </article>
+
+      <article class="dash-window">
+        <div class="window-title">learning tracks</div>
+        <div class="dash-link-list">
+          <a href="pages/roadmap.html">C++ / systems roadmap</a>
+          <a href="pages/articles.html">Roberts chapter notes</a>
+          <a href="pages/projects.html">project portfolio</a>
+          <a href="pages/build-your-own.html">build-your-own lab</a>
         </div>
-      </div>
+      </article>
+
+      <article class="dash-window">
+        <div class="window-title">owned library</div>
+        <p>Systems, embedded, circuits, programming language pragmatics, and engineering math.</p>
+        <a class="dash-command" href="pages/books.html">open books</a>
+      </article>
+
+      <article class="dash-window recent-window">
+        <div class="window-title">recent activity</div>
+        <ul class="activity-feed">
+          <li><span>read</span> CS:APP and Roberts notes are the main systems track.</li>
+          <li><span>build</span> C++ project archive remains available as reference work.</li>
+          <li><span>study</span> ECE prep is expanding through circuits, signals, and embedded systems.</li>
+        </ul>
+      </article>
+
+      <article class="dash-window">
+        <div class="window-title">documents</div>
+        <p>Local PDFs, drafts, notes, and reference files rendered as a file explorer.</p>
+        <a class="dash-command" href="pages/documents.html">browse docs</a>
+      </article>
+
+      <article class="dash-window">
+        <div class="window-title">links</div>
+        <p>Systems, C++, ECE, math, Linux, dotfiles, and writing resources.</p>
+        <a class="dash-command" href="pages/links.html">open links</a>
+      </article>
     </section>
 
-    <!-- What this is -->
-    <section class="about-strip">
-      <div class="section-inner">
-        <div class="about-strip-inner">
-          <div class="about-strip-text">
-            <div class="about-label">// What this is</div>
-            <p>This is a C++ learning journal — built in public, written as I go. I'm working through <strong>Programming Abstractions in C++</strong> by Eric Roberts cover to cover, using <a href="https://www.learncpp.com" target="_blank">LearnCpp.com</a> for deeper language coverage and <a href="https://exercism.org/tracks/cpp" target="_blank">Exercism</a> + <a href="https://neetcode.io" target="_blank">NeetCode</a> for supplementary exercises.</p>
-            <p>Every article is written by me, in my own words, as I encounter each concept for the first time. The code is hand-typed. The explanations are honest about what I don't fully understand yet. This site complements those resources — it never copies them.</p>
-          </div>
-          <div class="about-strip-stack">
-            <div class="stack-label">// The stack</div>
-            <div class="stack-item primary">
-              <span class="stack-role">Primary</span>
-              <span class="stack-name">Programming Abstractions in C++ — Roberts</span>
-            </div>
-            <div class="stack-item">
-              <span class="stack-role">Supplement</span>
-              <span class="stack-name">LearnCpp.com</span>
-            </div>
-            <div class="stack-item">
-              <span class="stack-role">Exercises</span>
-              <span class="stack-name">Exercism · NeetCode</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- What you'll find here -->
-    <section class="features">
-      <div class="section-inner">
-        <h2 class="section-title">What's here</h2>
-        <div class="features-grid">
-          <div class="feature-card">
-            <div class="feature-icon" aria-hidden="true"><span class="material-symbols-rounded">menu_book</span></div>
-            <h3>Articles</h3>
-            <p>Chapter-by-chapter notes following Eric Roberts' <em>Programming Abstractions in C++</em>, written as I learn. Raw, honest, and improving over time.</p>
-            <a href="pages/articles.html" class="feature-link">Browse articles →</a>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon" aria-hidden="true"><span class="material-symbols-rounded">construction</span></div>
-            <h3>Projects</h3>
-            <p>43 C++ projects from CLI tools to systems programming. Every project is hand-typed, documented, and mapped to the concepts behind it.</p>
-            <a href="pages/projects.html" class="feature-link">See projects →</a>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon" aria-hidden="true"><span class="material-symbols-rounded">sports_esports</span></div>
-            <h3>Daily Games</h3>
-            <p>C++ Wordle, code challenge of the day — will it compile? buffer overflow? what's the output? One puzzle, every day.</p>
-            <a href="pages/games.html" class="feature-link">Play today's →</a>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon" aria-hidden="true"><span class="material-symbols-rounded">map</span></div>
-            <h3>Roadmap</h3>
-            <p>A full learning path from basics to systems programming, with every resource cited and every project mapped to the concepts it teaches.</p>
-            <a href="pages/roadmap.html" class="feature-link">See the path →</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Latest Articles -->
-    <section class="latest">
-      <div class="section-inner">
-        <div class="section-header">
-          <h2 class="section-title">Latest Articles</h2>
-          <a href="pages/articles.html" class="see-all">All articles →</a>
-        </div>
-        <div class="article-list">
-          <a href="articles/chapters/ch-01-overview-of-cpp.html" class="article-item">
-            <span class="article-tag">Ch. 1</span>
-            <span class="article-title">Overview of C++: Programs, Compilation, and Your First Build</span>
-            <span class="article-date">May 2026</span>
-          </a>
-          <a href="#" class="article-item coming-soon">
-            <span class="article-tag">Ch. 2</span>
-            <span class="article-title">Functions and Libraries — coming soon</span>
-            <span class="article-date">—</span>
-          </a>
-          <a href="#" class="article-item coming-soon">
-            <span class="article-tag">Ch. 3</span>
-            <span class="article-title">Strings — coming soon</span>
-            <span class="article-date">—</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Resources banner -->
-    <section class="resources-banner">
-      <div class="section-inner">
-        <p class="banner-text">Built alongside <a href="https://www.learncpp.com" target="_blank">LearnCpp.com</a>, <a href="https://exercism.org/tracks/cpp" target="_blank">Exercism</a>, and Eric Roberts' <em>Programming Abstractions in C++</em>. All sources cited — this site complements, never copies.</p>
-      </div>
-    </section>
-
+    <div class="vim-statusline">
+      <span>NORMAL</span>
+      <span>The Humanist Engineer</span>
+      <span>static/github-pages</span>
+    </div>
   </main>
 
   <footer class="site-footer">
     <div class="footer-inner">
-      <span class="footer-logo">The C++ Grind</span>
-      <span class="footer-note">Built while learning. Improving as I go.</span>
+      <span class="footer-logo">The Humanist Engineer</span>
+      <span class="footer-note">Systems, ECE, Linux, books, and projects.</span>
       <div class="footer-links">
-        <a href="https://github.com/Cooper-Bugg" target="_blank">GitHub</a>
+        <a href="https://github.com/Cooper-Bugg" target="_blank" rel="noopener">GitHub</a>
         <a href="pages/contact.html">Contact</a>
       </div>
     </div>
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/navigation.js"></script>
+  <script>
+    const clock = document.getElementById('dashboard-clock');
+    function updateClock() {
+      if (!clock) return;
+      clock.textContent = new Date().toLocaleString([], { weekday: 'short', hour: '2-digit', minute: '2-digit' });
+    }
+    updateClock();
+    setInterval(updateClock, 30000);
+  </script>
 </body>
 </html>
