@@ -1,9 +1,9 @@
 
-# The C++ Grind
+# The Humanist Engineer
 
-Live site: https://cooper-bugg.github.io/TheCppGrind/
+Live site: https://cooper-bugg.github.io/humanist-engineer/
 
-Anyone can use this to learn how to code — not just C++. The projects, roadmap, and build challenges are language-agnostic at the concept level. Every project here works as a blueprint you can implement in any language. The C++ code is the reference; the patterns are universal.
+A personal learning blog, project portfolio, and digital garden documenting my transition from a CS undergrad (OSU Tulsa, grad Dec 2026) to an ECE Master's candidate (CU Boulder, starts Jan 2027), and beyond. It serves as a central repository for systems programming, computer architecture, embedded systems, technical reading notes, and Linux customizations.
 
 This repo is intentionally simple — plain HTML/CSS/JS — so the content is easy to edit and the site ships on GitHub Pages with no build step.
 
@@ -11,7 +11,7 @@ This repo is intentionally simple — plain HTML/CSS/JS — so the content is ea
 
 | Repo | What it is |
 |------|-----------|
-| **[TheCppGrind](https://github.com/Cooper-Bugg/TheCppGrind)** | This site — HTML, CSS, JS, articles, and data. The learning journal. |
+| **[humanist-engineer](https://github.com/Cooper-Bugg/humanist-engineer)** | This site — HTML, CSS, JS, articles, and data. The learning journal and portfolio. |
 | **[Start-Learning-Cpp](https://github.com/Cooper-Bugg/Start-Learning-Cpp)** | The project repo — all 43 C++ projects, hand-typed and documented. Use them as references when building your own version in any language. |
 
 ## What's in here
