@@ -24,3 +24,6 @@ venv/
 
 # Optional: ignore temporary exports (keep PDFs and site assets tracked)
 *.tmp
+
+# Private documents and drafts
+.docs/
