@@ -2,17 +2,23 @@
   "meta": {
     "version": "1.0",
     "generated": "2026-05-10",
-    "note": "AI-generated tags — may be inaccurate. Contact page to report issues.",
+    "note": "AI-generated tags \u2014 may be inaccurate. Contact page to report issues.",
     "site": "The CPP Grind"
   },
-
   "references": [
     {
       "id": "learncpp",
       "title": "LearnCpp.com",
       "url": "https://www.learncpp.com",
       "description": "The most comprehensive free C++ tutorial site. Covers everything from basics to advanced modern C++. Primary reading companion to Roberts.",
-      "tags": ["c++", "fundamentals", "modern-cpp", "oop", "templates", "stl"],
+      "tags": [
+        "c++",
+        "fundamentals",
+        "modern-cpp",
+        "oop",
+        "templates",
+        "stl"
+      ],
       "type": "course",
       "level": "beginner",
       "format": "free",
@@ -22,8 +28,13 @@
       "id": "cppreference",
       "title": "CppReference",
       "url": "https://en.cppreference.com",
-      "description": "The authoritative C++ language and standard library reference. Not a tutorial — use this to look up exact behavior, function signatures, and standard guarantees.",
-      "tags": ["c++", "reference", "stl", "language-spec"],
+      "description": "The authoritative C++ language and standard library reference. Not a tutorial \u2014 use this to look up exact behavior, function signatures, and standard guarantees.",
+      "tags": [
+        "c++",
+        "reference",
+        "stl",
+        "language-spec"
+      ],
       "type": "reference",
       "level": "intermediate",
       "format": "free",
@@ -34,7 +45,13 @@
       "title": "Compiler Explorer (Godbolt)",
       "url": "https://godbolt.org",
       "description": "Run C++ code in your browser and see the assembly output. Invaluable for understanding what the compiler actually does with your code.",
-      "tags": ["c++", "tools", "assembly", "compiler", "debugging"],
+      "tags": [
+        "c++",
+        "tools",
+        "assembly",
+        "compiler",
+        "debugging"
+      ],
       "type": "tool",
       "level": "intermediate",
       "format": "free",
@@ -45,7 +62,12 @@
       "title": "CppQuiz",
       "url": "https://cppquiz.org",
       "description": "Daily C++ quiz questions covering tricky language behavior, undefined behavior, and subtle gotchas. Great for testing real understanding.",
-      "tags": ["c++", "quiz", "undefined-behavior", "gotchas"],
+      "tags": [
+        "c++",
+        "quiz",
+        "undefined-behavior",
+        "gotchas"
+      ],
       "type": "interactive",
       "level": "intermediate",
       "format": "free",
@@ -56,7 +78,13 @@
       "title": "Exercism C++ Track",
       "url": "https://exercism.org/tracks/cpp",
       "description": "100 C++ exercises with community mentoring. Covers all major concepts in order. The best structured exercise path available for free.",
-      "tags": ["c++", "exercises", "practice", "fundamentals", "algorithms"],
+      "tags": [
+        "c++",
+        "exercises",
+        "practice",
+        "fundamentals",
+        "algorithms"
+      ],
       "type": "interactive",
       "level": "beginner",
       "format": "free",
@@ -64,10 +92,14 @@
     },
     {
       "id": "roadmapsh-cpp",
-      "title": "roadmap.sh — C++",
+      "title": "roadmap.sh \u2014 C++",
       "url": "https://roadmap.sh/cpp",
       "description": "Visual learning roadmap for C++. Good for seeing the big picture of what to learn and in what order.",
-      "tags": ["c++", "roadmap", "planning"],
+      "tags": [
+        "c++",
+        "roadmap",
+        "planning"
+      ],
       "type": "reference",
       "level": "beginner",
       "format": "free",
@@ -78,7 +110,12 @@
       "title": "NeetCode",
       "url": "https://neetcode.io",
       "description": "Structured algorithm and data structure problems with video explanations. Best used after learning C++ basics. Great for interview prep.",
-      "tags": ["algorithms", "data-structures", "interview", "leetcode"],
+      "tags": [
+        "algorithms",
+        "data-structures",
+        "interview",
+        "leetcode"
+      ],
       "type": "course",
       "level": "intermediate",
       "format": "freemium",
@@ -88,8 +125,14 @@
       "id": "codecrafters",
       "title": "Codecrafters",
       "url": "https://app.codecrafters.io/catalog",
-      "description": "Build real tools from scratch — Redis, Git, HTTP server, shell — with guided tests. C++ supported. One of the best ways to level up after basics.",
-      "tags": ["c++", "projects", "systems", "build-your-own", "advanced"],
+      "description": "Build real tools from scratch \u2014 Redis, Git, HTTP server, shell \u2014 with guided tests. C++ supported. One of the best ways to level up after basics.",
+      "tags": [
+        "c++",
+        "projects",
+        "systems",
+        "build-your-own",
+        "advanced"
+      ],
       "type": "interactive",
       "level": "intermediate",
       "format": "freemium",
@@ -100,7 +143,12 @@
       "title": "Codewars",
       "url": "https://www.codewars.com",
       "description": "Community-driven coding kata in C++ and many other languages. Good for extra practice and seeing other solutions.",
-      "tags": ["c++", "practice", "algorithms", "exercises"],
+      "tags": [
+        "c++",
+        "practice",
+        "algorithms",
+        "exercises"
+      ],
       "type": "interactive",
       "level": "beginner",
       "format": "free",
@@ -111,7 +159,13 @@
       "title": "CppCon YouTube Channel",
       "url": "https://www.youtube.com/@CppCon",
       "description": "Recorded talks from the annual C++ conference. Covers everything from beginner concepts to cutting-edge proposals. Watch after you have the basics.",
-      "tags": ["c++", "video", "advanced", "modern-cpp", "talks"],
+      "tags": [
+        "c++",
+        "video",
+        "advanced",
+        "modern-cpp",
+        "talks"
+      ],
       "type": "video",
       "level": "intermediate",
       "format": "free",
@@ -122,7 +176,12 @@
       "title": "W3Schools C++",
       "url": "https://www.w3schools.com/cpp/",
       "description": "Quick syntax reference and try-it editor. Good for fast lookups but lacks depth. Not a substitute for LearnCpp.",
-      "tags": ["c++", "reference", "beginner", "syntax"],
+      "tags": [
+        "c++",
+        "reference",
+        "beginner",
+        "syntax"
+      ],
       "type": "reference",
       "level": "beginner",
       "format": "free",
@@ -133,7 +192,13 @@
       "title": "Operating Systems: Three Easy Pieces",
       "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/",
       "description": "The clearest, most practical OS textbook available free online. Essential for understanding what your C++ programs run on top of.",
-      "tags": ["os", "systems", "concurrency", "memory", "processes"],
+      "tags": [
+        "os",
+        "systems",
+        "concurrency",
+        "memory",
+        "processes"
+      ],
       "type": "course",
       "level": "intermediate",
       "format": "free",
@@ -144,7 +209,13 @@
       "title": "MIT 6.S081 Operating Systems",
       "url": "https://pdos.csail.mit.edu/6.S081/",
       "description": "MIT's OS course with labs in C. Serious systems programming. Come here after OSTEP for hands-on kernel work.",
-      "tags": ["os", "systems", "c", "kernel", "advanced"],
+      "tags": [
+        "os",
+        "systems",
+        "c",
+        "kernel",
+        "advanced"
+      ],
       "type": "course",
       "level": "advanced",
       "format": "free",
@@ -155,7 +226,14 @@
       "title": "The Linux Programming Interface",
       "url": "https://man7.org/tlpi/",
       "description": "The definitive Linux API reference. Comprehensive coverage of system calls, POSIX, file I/O, processes, signals, and more.",
-      "tags": ["linux", "posix", "systems", "c", "advanced", "reference"],
+      "tags": [
+        "linux",
+        "posix",
+        "systems",
+        "c",
+        "advanced",
+        "reference"
+      ],
       "type": "reference",
       "level": "advanced",
       "format": "paid",
@@ -163,10 +241,15 @@
     },
     {
       "id": "mit-6046",
-      "title": "MIT 6.046 — Design and Analysis of Algorithms",
+      "title": "MIT 6.046 \u2014 Design and Analysis of Algorithms",
       "url": "https://ocw.mit.edu/courses/6-046j-design-and-analysis-of-algorithms-spring-2015/",
       "description": "MIT's algorithms course with lecture videos, problem sets, and exams. Rigorous treatment of sorting, graphs, dynamic programming, and NP-completeness.",
-      "tags": ["algorithms", "data-structures", "math", "advanced"],
+      "tags": [
+        "algorithms",
+        "data-structures",
+        "math",
+        "advanced"
+      ],
       "type": "course",
       "level": "advanced",
       "format": "free",
@@ -174,10 +257,17 @@
     },
     {
       "id": "csapp",
-      "title": "CS:APP — Computer Systems: A Programmer's Perspective",
+      "title": "CS:APP \u2014 Computer Systems: A Programmer's Perspective",
       "url": "https://csapp.cs.cmu.edu",
       "description": "CMU's deep systems textbook. Covers everything from bits to caches to concurrency. One of the best CS books ever written.",
-      "tags": ["systems", "assembly", "memory", "os", "networking", "advanced"],
+      "tags": [
+        "systems",
+        "assembly",
+        "memory",
+        "os",
+        "networking",
+        "advanced"
+      ],
       "type": "reference",
       "level": "advanced",
       "format": "paid",
@@ -188,7 +278,13 @@
       "title": "OverTheWire: Bandit",
       "url": "https://overthewire.org/wargames/bandit/",
       "description": "Linux command line wargame for beginners. Learn bash, file permissions, processes, and basic security through puzzles.",
-      "tags": ["linux", "security", "bash", "beginner", "interactive"],
+      "tags": [
+        "linux",
+        "security",
+        "bash",
+        "beginner",
+        "interactive"
+      ],
       "type": "interactive",
       "level": "beginner",
       "format": "free",
@@ -199,7 +295,11 @@
       "title": "LearnAnything.xyz",
       "url": "https://learnanything.xyz",
       "description": "Graphical interface linking learning pathways across many CS and non-CS topics. Good for discovering what you don't know you should learn.",
-      "tags": ["meta", "planning", "general"],
+      "tags": [
+        "meta",
+        "planning",
+        "general"
+      ],
       "type": "reference",
       "level": "beginner",
       "format": "free",
@@ -210,7 +310,12 @@
       "title": "Free Programming Books (GitHub)",
       "url": "https://github.com/EbookFoundation/free-programming-books",
       "description": "Massive curated list of free programming books in every language and topic. Good starting point when looking for free learning material.",
-      "tags": ["meta", "books", "general", "reference"],
+      "tags": [
+        "meta",
+        "books",
+        "general",
+        "reference"
+      ],
       "type": "reference",
       "level": "beginner",
       "format": "free",
@@ -221,7 +326,12 @@
       "title": "System Design Primer",
       "url": "https://github.com/donnemartin/system-design-primer",
       "description": "Comprehensive guide to system design concepts. Interview-focused but genuinely educational. Good when C++ fundamentals are solid.",
-      "tags": ["system-design", "architecture", "advanced", "interview"],
+      "tags": [
+        "system-design",
+        "architecture",
+        "advanced",
+        "interview"
+      ],
       "type": "reference",
       "level": "advanced",
       "format": "free",
@@ -232,7 +342,12 @@
       "title": "Paul's Online Math Notes",
       "url": "https://tutorial.math.lamar.edu",
       "description": "Concise, clear math tutorials covering calculus, algebra, and differential equations. Great free resource when you need math for algorithms or graphics.",
-      "tags": ["math", "calculus", "algebra", "reference"],
+      "tags": [
+        "math",
+        "calculus",
+        "algebra",
+        "reference"
+      ],
       "type": "reference",
       "level": "intermediate",
       "format": "free",
@@ -243,7 +358,12 @@
       "title": "MIT Linear Algebra (Gilbert Strang)",
       "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/",
       "description": "Gilbert Strang's legendary linear algebra course. Free video lectures and problem sets. Essential for graphics, ML, and numerical computing.",
-      "tags": ["math", "linear-algebra", "video", "advanced"],
+      "tags": [
+        "math",
+        "linear-algebra",
+        "video",
+        "advanced"
+      ],
       "type": "course",
       "level": "intermediate",
       "format": "free",
@@ -254,7 +374,13 @@
       "title": "Stanford CS140e",
       "url": "https://cs140e.sergio.bz",
       "description": "Practical OS course building a real OS in Rust for Raspberry Pi. Excellent systems intuition builder.",
-      "tags": ["os", "systems", "rust", "embedded", "advanced"],
+      "tags": [
+        "os",
+        "systems",
+        "rust",
+        "embedded",
+        "advanced"
+      ],
       "type": "course",
       "level": "advanced",
       "format": "free",
@@ -262,10 +388,17 @@
     },
     {
       "id": "helsinki-programming-mooc",
-      "title": "University of Helsinki — Programming MOOC",
+      "title": "University of Helsinki \u2014 Programming MOOC",
       "url": "https://programming-26.mooc.fi",
-      "description": "Free, self-paced programming course from the University of Helsinki — one of the most thorough beginner courses available. Covers programming fundamentals from the ground up with a heavy emphasis on problem-solving and clean code. Language-agnostic thinking that transfers directly to C++.",
-      "tags": ["beginner", "fundamentals", "mooc", "problem-solving", "free-course", "university"],
+      "description": "Free, self-paced programming course from the University of Helsinki \u2014 one of the most thorough beginner courses available. Covers programming fundamentals from the ground up with a heavy emphasis on problem-solving and clean code. Language-agnostic thinking that transfers directly to C++.",
+      "tags": [
+        "beginner",
+        "fundamentals",
+        "mooc",
+        "problem-solving",
+        "free-course",
+        "university"
+      ],
       "type": "course",
       "level": "beginner",
       "format": "free",
@@ -276,21 +409,31 @@
       "title": "LunarVim",
       "url": "https://github.com/LunarVim/LunarVim",
       "description": "Community-driven Neovim configuration. Excellent IDE-like experience in the terminal for C++ development.",
-      "tags": ["tools", "editor", "vim", "setup"],
+      "tags": [
+        "tools",
+        "editor",
+        "vim",
+        "setup"
+      ],
       "type": "tool",
       "level": "intermediate",
       "format": "free",
       "recommended": false
     }
   ],
-
   "resources": [
     {
       "id": "roberts-book",
-      "title": "Programming Abstractions in C++ — Eric Roberts",
+      "title": "Programming Abstractions in C++ \u2014 Eric Roberts",
       "url": "https://www.amazon.com/Programming-Abstractions-C-Eric-Roberts/dp/0133454843",
-      "description": "The primary textbook this site follows. Exceptional pedagogy — starts from first principles and builds to graphs and inheritance. Buy this book.",
-      "tags": ["c++", "fundamentals", "algorithms", "data-structures", "oop"],
+      "description": "The primary textbook this site follows. Exceptional pedagogy \u2014 starts from first principles and builds to graphs and inheritance. Buy this book.",
+      "tags": [
+        "c++",
+        "fundamentals",
+        "algorithms",
+        "data-structures",
+        "oop"
+      ],
       "type": "book",
       "level": "beginner",
       "format": "paid",
@@ -299,10 +442,16 @@
     },
     {
       "id": "cpp-software-design",
-      "title": "C++ Software Design — Klaus Iglberger",
+      "title": "C++ Software Design \u2014 Klaus Iglberger",
       "url": "https://www.oreilly.com/library/view/c-software-design/9781098113155/",
       "description": "Modern C++ design patterns and principles. Read after Roberts when you want to write production-quality code, not just working code.",
-      "tags": ["c++", "design-patterns", "oop", "modern-cpp", "advanced"],
+      "tags": [
+        "c++",
+        "design-patterns",
+        "oop",
+        "modern-cpp",
+        "advanced"
+      ],
       "type": "book",
       "level": "advanced",
       "format": "paid",
@@ -311,10 +460,16 @@
     },
     {
       "id": "cpp-concurrency",
-      "title": "C++ Concurrency in Action — Anthony Williams",
+      "title": "C++ Concurrency in Action \u2014 Anthony Williams",
       "url": "https://www.manning.com/books/c-plus-plus-concurrency-in-action-second-edition",
       "description": "The definitive book on multithreading in C++. Covers std::thread, atomics, memory ordering, and lock-free data structures.",
-      "tags": ["c++", "concurrency", "threads", "advanced", "systems"],
+      "tags": [
+        "c++",
+        "concurrency",
+        "threads",
+        "advanced",
+        "systems"
+      ],
       "type": "book",
       "level": "advanced",
       "format": "paid",
@@ -323,10 +478,15 @@
     },
     {
       "id": "ddia",
-      "title": "Designing Data-Intensive Applications — Martin Kleppmann",
+      "title": "Designing Data-Intensive Applications \u2014 Martin Kleppmann",
       "url": "https://dataintensive.net",
       "description": "The best book on distributed systems and data infrastructure. Not C++ specific but essential reading for systems engineers.",
-      "tags": ["system-design", "databases", "distributed-systems", "advanced"],
+      "tags": [
+        "system-design",
+        "databases",
+        "distributed-systems",
+        "advanced"
+      ],
       "type": "book",
       "level": "advanced",
       "format": "paid",
@@ -335,10 +495,17 @@
     },
     {
       "id": "csapp-book",
-      "title": "Computer Systems: A Programmer's Perspective — Bryant & O'Hallaron",
+      "title": "Computer Systems: A Programmer's Perspective \u2014 Bryant & O'Hallaron",
       "url": "https://csapp.cs.cmu.edu",
       "description": "Covers the full stack from bits to processes to networking. Deeply informs how to write efficient C++ by understanding what runs underneath.",
-      "tags": ["systems", "assembly", "memory", "os", "c", "advanced"],
+      "tags": [
+        "systems",
+        "assembly",
+        "memory",
+        "os",
+        "c",
+        "advanced"
+      ],
       "type": "book",
       "level": "advanced",
       "format": "paid",
@@ -347,10 +514,16 @@
     },
     {
       "id": "epi",
-      "title": "Elements of Programming Interviews — Adnan Aziz",
+      "title": "Elements of Programming Interviews \u2014 Adnan Aziz",
       "url": "https://www.amazon.com/Elements-Programming-Interviews-Insiders-Guide/dp/1479274836",
       "description": "Interview preparation book with C++ solutions. Dense problem set covering arrays, strings, trees, graphs, and dynamic programming.",
-      "tags": ["c++", "algorithms", "interview", "data-structures", "advanced"],
+      "tags": [
+        "c++",
+        "algorithms",
+        "interview",
+        "data-structures",
+        "advanced"
+      ],
       "type": "book",
       "level": "advanced",
       "format": "paid",
@@ -362,7 +535,11 @@
       "title": "Daily C++ Interview",
       "url": "https://www.amazon.com/Daily-C-Interview-yourself-interview/dp/B09SH116GK",
       "description": "One C++ interview question per day format. Good for maintaining sharpness and discovering knowledge gaps.",
-      "tags": ["c++", "interview", "reference"],
+      "tags": [
+        "c++",
+        "interview",
+        "reference"
+      ],
       "type": "book",
       "level": "intermediate",
       "format": "paid",
@@ -374,7 +551,13 @@
       "title": "Introduction to Algorithms (CLRS)",
       "url": "https://mitpress.mit.edu/9780262046305/introduction-to-algorithms/",
       "description": "The canonical algorithms textbook. Dense and mathematical. Use alongside MIT 6.046 lectures. Not beginner-friendly but comprehensive.",
-      "tags": ["algorithms", "data-structures", "math", "advanced", "reference"],
+      "tags": [
+        "algorithms",
+        "data-structures",
+        "math",
+        "advanced",
+        "reference"
+      ],
       "type": "book",
       "level": "advanced",
       "format": "paid",
@@ -383,10 +566,14 @@
     },
     {
       "id": "algorithm-design-manual",
-      "title": "The Algorithm Design Manual — Skiena",
+      "title": "The Algorithm Design Manual \u2014 Skiena",
       "url": "https://www.algorist.com",
       "description": "More practical than CLRS. War stories from real algorithm problems plus a catalog of known algorithms. Easier to read than CLRS.",
-      "tags": ["algorithms", "data-structures", "advanced"],
+      "tags": [
+        "algorithms",
+        "data-structures",
+        "advanced"
+      ],
       "type": "book",
       "level": "advanced",
       "format": "paid",
@@ -395,10 +582,15 @@
     },
     {
       "id": "how-to-prove-it",
-      "title": "How to Prove It — Daniel Velleman",
+      "title": "How to Prove It \u2014 Daniel Velleman",
       "url": "https://www.cambridge.org/us/academic/subjects/mathematics/logic-categories-and-sets/how-prove-it-structured-approach",
       "description": "Introduction to mathematical proofs and logic. Essential background for algorithm analysis and theoretical CS.",
-      "tags": ["math", "proofs", "logic", "theory"],
+      "tags": [
+        "math",
+        "proofs",
+        "logic",
+        "theory"
+      ],
       "type": "book",
       "level": "intermediate",
       "format": "paid",
@@ -407,10 +599,14 @@
     },
     {
       "id": "understanding-analysis",
-      "title": "Understanding Analysis — Abbott",
+      "title": "Understanding Analysis \u2014 Abbott",
       "url": "https://link.springer.com/book/10.1007/978-1-4939-2712-8",
       "description": "Rigorous real analysis text. Relevant when numerical methods or floating point precision matters in your C++ work.",
-      "tags": ["math", "analysis", "advanced"],
+      "tags": [
+        "math",
+        "analysis",
+        "advanced"
+      ],
       "type": "book",
       "level": "advanced",
       "format": "paid",
@@ -419,10 +615,17 @@
     },
     {
       "id": "crafting-interpreters",
-      "title": "Crafting Interpreters — Robert Nystrom",
+      "title": "Crafting Interpreters \u2014 Robert Nystrom",
       "url": "https://craftinginterpreters.com",
       "description": "Build a complete interpreter from scratch in Java then C. The C implementation is excellent systems C++ adjacent work. Free online.",
-      "tags": ["compilers", "interpreters", "c", "java", "advanced", "projects"],
+      "tags": [
+        "compilers",
+        "interpreters",
+        "c",
+        "java",
+        "advanced",
+        "projects"
+      ],
       "type": "book",
       "level": "advanced",
       "format": "free",
@@ -430,7 +633,6 @@
       "recommended": true
     }
   ],
-
   "build_your_own": [
     {
       "id": "byo-redis-cpp",
@@ -442,7 +644,12 @@
       "difficulty": "intermediate",
       "length": "week",
       "translatable": false,
-      "tags": ["c++", "networking", "database", "systems"]
+      "tags": [
+        "c++",
+        "networking",
+        "database",
+        "systems"
+      ]
     },
     {
       "id": "byo-shell-c",
@@ -450,11 +657,17 @@
       "url": "https://brennan.io/2015/01/16/write-a-shell-in-c/",
       "language": "c",
       "category": "shell",
-      "description": "Build a Unix shell with forking, pipes, and job control. Direct C — translates cleanly to C++.",
+      "description": "Build a Unix shell with forking, pipes, and job control. Direct C \u2014 translates cleanly to C++.",
       "difficulty": "intermediate",
       "length": "weekend",
       "translatable": true,
-      "tags": ["c", "posix", "shell", "processes", "systems"]
+      "tags": [
+        "c",
+        "posix",
+        "shell",
+        "processes",
+        "systems"
+      ]
     },
     {
       "id": "byo-shell-c2",
@@ -466,7 +679,12 @@
       "difficulty": "intermediate",
       "length": "week",
       "translatable": true,
-      "tags": ["c", "posix", "shell", "systems"]
+      "tags": [
+        "c",
+        "posix",
+        "shell",
+        "systems"
+      ]
     },
     {
       "id": "byo-text-editor-c",
@@ -478,7 +696,12 @@
       "difficulty": "intermediate",
       "length": "week",
       "translatable": true,
-      "tags": ["c", "terminal", "systems", "file-io"]
+      "tags": [
+        "c",
+        "terminal",
+        "systems",
+        "file-io"
+      ]
     },
     {
       "id": "byo-text-editor-cpp",
@@ -490,7 +713,11 @@
       "difficulty": "intermediate",
       "length": "week",
       "translatable": false,
-      "tags": ["c++", "gui", "systems"]
+      "tags": [
+        "c++",
+        "gui",
+        "systems"
+      ]
     },
     {
       "id": "byo-os-c",
@@ -502,7 +729,13 @@
       "difficulty": "advanced",
       "length": "month",
       "translatable": false,
-      "tags": ["c", "os", "kernel", "assembly", "advanced"]
+      "tags": [
+        "c",
+        "os",
+        "kernel",
+        "assembly",
+        "advanced"
+      ]
     },
     {
       "id": "byo-os-cpp",
@@ -514,11 +747,17 @@
       "difficulty": "advanced",
       "length": "month",
       "translatable": false,
-      "tags": ["c++", "os", "kernel", "advanced", "video"]
+      "tags": [
+        "c++",
+        "os",
+        "kernel",
+        "advanced",
+        "video"
+      ]
     },
     {
       "id": "byo-malloc-c",
-      "title": "Malloc is not magic — Implementing Your Own Memory Allocator",
+      "title": "Malloc is not magic \u2014 Implementing Your Own Memory Allocator",
       "url": "https://medium.com/p/e0354e914402",
       "language": "c",
       "category": "memory-allocator",
@@ -526,7 +765,12 @@
       "difficulty": "intermediate",
       "length": "weekend",
       "translatable": true,
-      "tags": ["c", "memory", "systems", "allocator"]
+      "tags": [
+        "c",
+        "memory",
+        "systems",
+        "allocator"
+      ]
     },
     {
       "id": "byo-db-c",
@@ -538,7 +782,12 @@
       "difficulty": "advanced",
       "length": "month",
       "translatable": true,
-      "tags": ["c", "database", "data-structures", "advanced"]
+      "tags": [
+        "c",
+        "database",
+        "data-structures",
+        "advanced"
+      ]
     },
     {
       "id": "byo-raytracer-cpp",
@@ -550,7 +799,12 @@
       "difficulty": "intermediate",
       "length": "weekend",
       "translatable": false,
-      "tags": ["c++", "graphics", "math", "3d"]
+      "tags": [
+        "c++",
+        "graphics",
+        "math",
+        "3d"
+      ]
     },
     {
       "id": "byo-raytracer-cpp2",
@@ -562,7 +816,13 @@
       "difficulty": "advanced",
       "length": "month",
       "translatable": false,
-      "tags": ["c++", "graphics", "math", "advanced", "3d"]
+      "tags": [
+        "c++",
+        "graphics",
+        "math",
+        "advanced",
+        "3d"
+      ]
     },
     {
       "id": "byo-raycaster-cpp",
@@ -574,7 +834,12 @@
       "difficulty": "intermediate",
       "length": "weekend",
       "translatable": false,
-      "tags": ["c++", "graphics", "game", "3d"]
+      "tags": [
+        "c++",
+        "graphics",
+        "game",
+        "3d"
+      ]
     },
     {
       "id": "byo-chip8-cpp",
@@ -582,23 +847,33 @@
       "url": "http://www.multigesture.net/articles/how-to-write-an-emulator-chip-8-interpreter/",
       "language": "c++",
       "category": "emulator",
-      "description": "Build a CHIP-8 emulator in C++. Great introduction to emulation — simple enough to finish in a weekend.",
+      "description": "Build a CHIP-8 emulator in C++. Great introduction to emulation \u2014 simple enough to finish in a weekend.",
       "difficulty": "intermediate",
       "length": "weekend",
       "translatable": false,
-      "tags": ["c++", "emulator", "systems", "assembly"]
+      "tags": [
+        "c++",
+        "emulator",
+        "systems",
+        "assembly"
+      ]
     },
     {
       "id": "byo-gameboy-cpp",
-      "title": "Emulation Tutorial — GameBoy Emulator",
+      "title": "Emulation Tutorial \u2014 GameBoy Emulator",
       "url": "http://www.codeslinger.co.uk/pages/projects/gameboy.html",
       "language": "c++",
       "category": "emulator",
-      "description": "Full GameBoy emulator in C++. Much more complex than CHIP-8 — do that first.",
+      "description": "Full GameBoy emulator in C++. Much more complex than CHIP-8 \u2014 do that first.",
       "difficulty": "advanced",
       "length": "month",
       "translatable": false,
-      "tags": ["c++", "emulator", "systems", "advanced"]
+      "tags": [
+        "c++",
+        "emulator",
+        "systems",
+        "advanced"
+      ]
     },
     {
       "id": "byo-nes-cpp",
@@ -610,7 +885,13 @@
       "difficulty": "advanced",
       "length": "month",
       "translatable": false,
-      "tags": ["c++", "emulator", "systems", "advanced", "video"]
+      "tags": [
+        "c++",
+        "emulator",
+        "systems",
+        "advanced",
+        "video"
+      ]
     },
     {
       "id": "byo-tcp-c",
@@ -622,7 +903,12 @@
       "difficulty": "advanced",
       "length": "month",
       "translatable": true,
-      "tags": ["c", "networking", "systems", "advanced"]
+      "tags": [
+        "c",
+        "networking",
+        "systems",
+        "advanced"
+      ]
     },
     {
       "id": "byo-beejs-networking",
@@ -634,7 +920,12 @@
       "difficulty": "intermediate",
       "length": "week",
       "translatable": true,
-      "tags": ["c", "networking", "sockets", "systems"]
+      "tags": [
+        "c",
+        "networking",
+        "sockets",
+        "systems"
+      ]
     },
     {
       "id": "byo-breakout-cpp",
@@ -646,7 +937,12 @@
       "difficulty": "intermediate",
       "length": "week",
       "translatable": false,
-      "tags": ["c++", "game", "opengl", "graphics"]
+      "tags": [
+        "c++",
+        "game",
+        "opengl",
+        "graphics"
+      ]
     },
     {
       "id": "byo-space-invaders-cpp",
@@ -658,7 +954,12 @@
       "difficulty": "intermediate",
       "length": "week",
       "translatable": false,
-      "tags": ["c++", "game", "graphics", "systems"]
+      "tags": [
+        "c++",
+        "game",
+        "graphics",
+        "systems"
+      ]
     },
     {
       "id": "byo-compiler-cpp-kaleidoscope",
@@ -670,7 +971,12 @@
       "difficulty": "advanced",
       "length": "month",
       "translatable": false,
-      "tags": ["c++", "compilers", "llvm", "advanced"]
+      "tags": [
+        "c++",
+        "compilers",
+        "llvm",
+        "advanced"
+      ]
     },
     {
       "id": "byo-compiler-cpp-toy",
@@ -682,7 +988,11 @@
       "difficulty": "advanced",
       "length": "week",
       "translatable": false,
-      "tags": ["c++", "compilers", "advanced"]
+      "tags": [
+        "c++",
+        "compilers",
+        "advanced"
+      ]
     },
     {
       "id": "byo-lisp-c",
@@ -694,7 +1004,12 @@
       "difficulty": "intermediate",
       "length": "week",
       "translatable": true,
-      "tags": ["c", "interpreters", "compilers", "lisp"]
+      "tags": [
+        "c",
+        "interpreters",
+        "compilers",
+        "lisp"
+      ]
     },
     {
       "id": "byo-crafting-interpreters",
@@ -702,11 +1017,17 @@
       "url": "https://craftinginterpreters.com",
       "language": "c",
       "category": "programming-language",
-      "description": "Build two complete interpreters — one in Java then one in C. The C version is the advanced, production-quality one.",
+      "description": "Build two complete interpreters \u2014 one in Java then one in C. The C version is the advanced, production-quality one.",
       "difficulty": "advanced",
       "length": "month",
       "translatable": true,
-      "tags": ["c", "java", "interpreters", "compilers", "advanced"]
+      "tags": [
+        "c",
+        "java",
+        "interpreters",
+        "compilers",
+        "advanced"
+      ]
     },
     {
       "id": "byo-regex-c",
@@ -718,7 +1039,12 @@
       "difficulty": "intermediate",
       "length": "weekend",
       "translatable": true,
-      "tags": ["c", "parsing", "algorithms", "elegant"]
+      "tags": [
+        "c",
+        "parsing",
+        "algorithms",
+        "elegant"
+      ]
     },
     {
       "id": "byo-hash-table-c",
@@ -730,7 +1056,12 @@
       "difficulty": "intermediate",
       "length": "weekend",
       "translatable": true,
-      "tags": ["c", "data-structures", "hash-map", "algorithms"]
+      "tags": [
+        "c",
+        "data-structures",
+        "hash-map",
+        "algorithms"
+      ]
     },
     {
       "id": "byo-debugger-cpp",
@@ -742,7 +1073,13 @@
       "difficulty": "advanced",
       "length": "month",
       "translatable": false,
-      "tags": ["c++", "systems", "debugging", "linux", "advanced"]
+      "tags": [
+        "c++",
+        "systems",
+        "debugging",
+        "linux",
+        "advanced"
+      ]
     },
     {
       "id": "byo-game-engine-cpp",
@@ -754,7 +1091,13 @@
       "difficulty": "advanced",
       "length": "month",
       "translatable": false,
-      "tags": ["c++", "game", "graphics", "advanced", "video"]
+      "tags": [
+        "c++",
+        "game",
+        "graphics",
+        "advanced",
+        "video"
+      ]
     },
     {
       "id": "byo-window-manager-cpp",
@@ -766,7 +1109,12 @@
       "difficulty": "advanced",
       "length": "month",
       "translatable": false,
-      "tags": ["c++", "linux", "systems", "advanced"]
+      "tags": [
+        "c++",
+        "linux",
+        "systems",
+        "advanced"
+      ]
     },
     {
       "id": "byo-nand2tetris",
@@ -778,7 +1126,13 @@
       "difficulty": "advanced",
       "length": "semester",
       "translatable": false,
-      "tags": ["assembly", "os", "compiler", "hardware", "advanced"]
+      "tags": [
+        "assembly",
+        "os",
+        "compiler",
+        "hardware",
+        "advanced"
+      ]
     },
     {
       "id": "byo-voxel-cpp",
@@ -790,11 +1144,17 @@
       "difficulty": "advanced",
       "length": "month",
       "translatable": false,
-      "tags": ["c++", "graphics", "game", "3d", "advanced"]
+      "tags": [
+        "c++",
+        "graphics",
+        "game",
+        "3d",
+        "advanced"
+      ]
     },
     {
       "id": "byo-physics-cpp",
-      "title": "Game Physics Series — Allen Chou",
+      "title": "Game Physics Series \u2014 Allen Chou",
       "url": "http://allenchou.net/game-physics-series/",
       "language": "c++",
       "category": "physics-engine",
@@ -802,11 +1162,17 @@
       "difficulty": "advanced",
       "length": "month",
       "translatable": false,
-      "tags": ["c++", "physics", "game", "math", "advanced"]
+      "tags": [
+        "c++",
+        "physics",
+        "game",
+        "math",
+        "advanced"
+      ]
     },
     {
       "id": "byo-neural-net-py",
-      "title": "Neural Networks: Zero to Hero — Karpathy",
+      "title": "Neural Networks: Zero to Hero \u2014 Karpathy",
       "url": "https://www.youtube.com/playlist?list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ",
       "language": "python",
       "category": "neural-network",
@@ -814,7 +1180,13 @@
       "difficulty": "intermediate",
       "length": "week",
       "translatable": true,
-      "tags": ["python", "ml", "neural-networks", "math", "video"]
+      "tags": [
+        "python",
+        "ml",
+        "neural-networks",
+        "math",
+        "video"
+      ]
     },
     {
       "id": "byo-git-py",
@@ -826,7 +1198,12 @@
       "difficulty": "intermediate",
       "length": "week",
       "translatable": true,
-      "tags": ["python", "git", "data-structures", "systems"]
+      "tags": [
+        "python",
+        "git",
+        "data-structures",
+        "systems"
+      ]
     },
     {
       "id": "byo-docker-go",
@@ -838,7 +1215,13 @@
       "difficulty": "advanced",
       "length": "week",
       "translatable": true,
-      "tags": ["go", "linux", "containers", "systems", "advanced"]
+      "tags": [
+        "go",
+        "linux",
+        "containers",
+        "systems",
+        "advanced"
+      ]
     },
     {
       "id": "byo-browser-rust",
@@ -850,7 +1233,12 @@
       "difficulty": "advanced",
       "length": "week",
       "translatable": true,
-      "tags": ["rust", "parsing", "web", "advanced"]
+      "tags": [
+        "rust",
+        "parsing",
+        "web",
+        "advanced"
+      ]
     },
     {
       "id": "byo-webserver-node",
@@ -862,7 +1250,12 @@
       "difficulty": "beginner",
       "length": "weekend",
       "translatable": true,
-      "tags": ["node", "networking", "http", "web"]
+      "tags": [
+        "node",
+        "networking",
+        "http",
+        "web"
+      ]
     },
     {
       "id": "byo-blockchain-py",
@@ -874,7 +1267,12 @@
       "difficulty": "beginner",
       "length": "weekend",
       "translatable": true,
-      "tags": ["python", "blockchain", "hashing", "networking"]
+      "tags": [
+        "python",
+        "blockchain",
+        "hashing",
+        "networking"
+      ]
     },
     {
       "id": "byo-compiler-go",
@@ -886,7 +1284,12 @@
       "difficulty": "intermediate",
       "length": "weekend",
       "translatable": true,
-      "tags": ["go", "compilers", "parsing", "algorithms"]
+      "tags": [
+        "go",
+        "compilers",
+        "parsing",
+        "algorithms"
+      ]
     },
     {
       "id": "byo-ray-intro-cpp",
@@ -898,7 +1301,12 @@
       "difficulty": "intermediate",
       "length": "week",
       "translatable": false,
-      "tags": ["c++", "graphics", "math", "3d"]
+      "tags": [
+        "c++",
+        "graphics",
+        "math",
+        "3d"
+      ]
     },
     {
       "id": "byo-tinyrenderer",
@@ -910,7 +1318,12 @@
       "difficulty": "intermediate",
       "length": "week",
       "translatable": false,
-      "tags": ["c++", "graphics", "opengl", "rendering"]
+      "tags": [
+        "c++",
+        "graphics",
+        "opengl",
+        "rendering"
+      ]
     },
     {
       "id": "byo-rasterization-cpp",
@@ -918,11 +1331,16 @@
       "url": "https://www.scratchapixel.com/lessons/3d-basic-rendering/rasterization-practical-implementation/overview-rasterization-algorithm",
       "language": "c++",
       "category": "3d-renderer",
-      "description": "Deep dive into rasterization — how GPUs turn triangles into pixels. The foundation of real-time 3D graphics.",
+      "description": "Deep dive into rasterization \u2014 how GPUs turn triangles into pixels. The foundation of real-time 3D graphics.",
       "difficulty": "advanced",
       "length": "week",
       "translatable": false,
-      "tags": ["c++", "graphics", "algorithms", "3d"]
+      "tags": [
+        "c++",
+        "graphics",
+        "algorithms",
+        "3d"
+      ]
     },
     {
       "id": "byo-lc3-vm",
@@ -930,11 +1348,16 @@
       "url": "https://justinmeiners.github.io/lc3-vm/",
       "language": "c",
       "category": "emulator",
-      "description": "Build an LC-3 virtual machine in C. Shows how CPUs actually work — registers, instruction sets, and memory-mapped I/O.",
+      "description": "Build an LC-3 virtual machine in C. Shows how CPUs actually work \u2014 registers, instruction sets, and memory-mapped I/O.",
       "difficulty": "intermediate",
       "length": "week",
       "translatable": true,
-      "tags": ["c", "vm", "assembly", "systems"]
+      "tags": [
+        "c",
+        "vm",
+        "assembly",
+        "systems"
+      ]
     },
     {
       "id": "byo-cinoop",
@@ -946,7 +1369,12 @@
       "difficulty": "intermediate",
       "length": "week",
       "translatable": true,
-      "tags": ["c", "emulator", "game", "systems"]
+      "tags": [
+        "c",
+        "emulator",
+        "game",
+        "systems"
+      ]
     },
     {
       "id": "byo-handmade-hero",
@@ -954,11 +1382,16 @@
       "url": "https://handmadehero.org/",
       "language": "c",
       "category": "game",
-      "description": "Casey Muratori builds a complete professional game from scratch in C — no libraries, no engine. Legendary for teaching how software really works.",
+      "description": "Casey Muratori builds a complete professional game from scratch in C \u2014 no libraries, no engine. Legendary for teaching how software really works.",
       "difficulty": "advanced",
       "length": "semester",
       "translatable": false,
-      "tags": ["c", "game", "systems", "low-level"]
+      "tags": [
+        "c",
+        "game",
+        "systems",
+        "low-level"
+      ]
     },
     {
       "id": "byo-nes-c",
@@ -970,11 +1403,17 @@
       "difficulty": "advanced",
       "length": "month",
       "translatable": false,
-      "tags": ["c", "game", "embedded", "assembly", "hardware"]
+      "tags": [
+        "c",
+        "game",
+        "embedded",
+        "assembly",
+        "hardware"
+      ]
     },
     {
       "id": "byo-tetris-cpp",
-      "title": "Tetris Tutorial in C++ — Platform Independent",
+      "title": "Tetris Tutorial in C++ \u2014 Platform Independent",
       "url": "http://javilop.com/gamedev/tetris-tutorial-in-c-platform-independent-focused-in-game-logic-for-beginners/",
       "language": "c++",
       "category": "game",
@@ -982,7 +1421,12 @@
       "difficulty": "beginner",
       "length": "weekend",
       "translatable": false,
-      "tags": ["c++", "game", "beginner", "logic"]
+      "tags": [
+        "c++",
+        "game",
+        "beginner",
+        "logic"
+      ]
     },
     {
       "id": "byo-little-os-book",
@@ -994,7 +1438,12 @@
       "difficulty": "advanced",
       "length": "month",
       "translatable": false,
-      "tags": ["c", "os", "kernel", "x86"]
+      "tags": [
+        "c",
+        "os",
+        "kernel",
+        "x86"
+      ]
     },
     {
       "id": "byo-unix-clone",
@@ -1006,19 +1455,30 @@
       "difficulty": "advanced",
       "length": "month",
       "translatable": false,
-      "tags": ["c", "os", "kernel", "unix", "x86"]
+      "tags": [
+        "c",
+        "os",
+        "kernel",
+        "unix",
+        "x86"
+      ]
     },
     {
       "id": "byo-kernel-101",
-      "title": "Kernel 101 — Let's Write a Kernel",
+      "title": "Kernel 101 \u2014 Let's Write a Kernel",
       "url": "https://arjunsreedharan.org/post/82710718100/kernel-101-lets-write-a-kernel",
       "language": "c",
       "category": "operating-system",
-      "description": "Minimal kernel in C that boots and prints to screen. Perfect first kernel — short and achievable in a weekend.",
+      "description": "Minimal kernel in C that boots and prints to screen. Perfect first kernel \u2014 short and achievable in a weekend.",
       "difficulty": "intermediate",
       "length": "weekend",
       "translatable": false,
-      "tags": ["c", "os", "kernel", "x86"]
+      "tags": [
+        "c",
+        "os",
+        "kernel",
+        "x86"
+      ]
     },
     {
       "id": "byo-os-from-scratch",
@@ -1030,7 +1490,13 @@
       "difficulty": "advanced",
       "length": "month",
       "translatable": false,
-      "tags": ["c", "os", "kernel", "assembly", "x86"]
+      "tags": [
+        "c",
+        "os",
+        "kernel",
+        "assembly",
+        "x86"
+      ]
     },
     {
       "id": "byo-rpi-os",
@@ -1042,7 +1508,13 @@
       "difficulty": "advanced",
       "length": "semester",
       "translatable": false,
-      "tags": ["c", "os", "linux", "embedded", "arm"]
+      "tags": [
+        "c",
+        "os",
+        "linux",
+        "embedded",
+        "arm"
+      ]
     },
     {
       "id": "byo-os-rust",
@@ -1054,7 +1526,13 @@
       "difficulty": "advanced",
       "length": "month",
       "translatable": true,
-      "tags": ["rust", "os", "kernel", "memory", "systems"]
+      "tags": [
+        "rust",
+        "os",
+        "kernel",
+        "memory",
+        "systems"
+      ]
     },
     {
       "id": "byo-shell-kamalmarhubi",
@@ -1066,7 +1544,12 @@
       "difficulty": "intermediate",
       "length": "weekend",
       "translatable": true,
-      "tags": ["c", "posix", "shell", "processes"]
+      "tags": [
+        "c",
+        "posix",
+        "shell",
+        "processes"
+      ]
     },
     {
       "id": "byo-unix-shell",
@@ -1078,7 +1561,12 @@
       "difficulty": "intermediate",
       "length": "week",
       "translatable": true,
-      "tags": ["c", "posix", "shell", "signals"]
+      "tags": [
+        "c",
+        "posix",
+        "shell",
+        "signals"
+      ]
     },
     {
       "id": "byo-gc-baby",
@@ -1086,11 +1574,16 @@
       "url": "http://journal.stuffwithstuff.com/2013/12/08/babys-first-garbage-collector/",
       "language": "c",
       "category": "programming-language",
-      "description": "Bob Nystrom's minimal mark-and-sweep GC in C. Short and clear — builds core intuition for memory management in language runtimes.",
+      "description": "Bob Nystrom's minimal mark-and-sweep GC in C. Short and clear \u2014 builds core intuition for memory management in language runtimes.",
       "difficulty": "intermediate",
       "length": "weekend",
       "translatable": true,
-      "tags": ["c", "gc", "memory", "compilers"]
+      "tags": [
+        "c",
+        "gc",
+        "memory",
+        "compilers"
+      ]
     },
     {
       "id": "byo-c-interpreter",
@@ -1102,7 +1595,12 @@
       "difficulty": "advanced",
       "length": "month",
       "translatable": false,
-      "tags": ["c", "compilers", "interpreters", "advanced"]
+      "tags": [
+        "c",
+        "compilers",
+        "interpreters",
+        "advanced"
+      ]
     },
     {
       "id": "byo-tiny-compiler-canonical",
@@ -1114,7 +1612,12 @@
       "difficulty": "beginner",
       "length": "weekend",
       "translatable": true,
-      "tags": ["javascript", "compilers", "parsing", "beginner"]
+      "tags": [
+        "javascript",
+        "compilers",
+        "parsing",
+        "beginner"
+      ]
     },
     {
       "id": "byo-64k-intro",
@@ -1122,11 +1625,16 @@
       "url": "http://www.lofibucket.com/articles/64k_intro.html",
       "language": "c++",
       "category": "uncategorized",
-      "description": "How to pack a real-time 3D demo into 64 kilobytes. Compression, procedural generation, shader tricks — extreme optimization.",
+      "description": "How to pack a real-time 3D demo into 64 kilobytes. Compression, procedural generation, shader tricks \u2014 extreme optimization.",
       "difficulty": "advanced",
       "length": "month",
       "translatable": false,
-      "tags": ["c++", "graphics", "compression", "demoscene"]
+      "tags": [
+        "c++",
+        "graphics",
+        "compression",
+        "demoscene"
+      ]
     },
     {
       "id": "byo-video-player",
@@ -1138,11 +1646,16 @@
       "difficulty": "intermediate",
       "length": "week",
       "translatable": false,
-      "tags": ["c", "video", "ffmpeg", "multimedia"]
+      "tags": [
+        "c",
+        "video",
+        "ffmpeg",
+        "multimedia"
+      ]
     },
     {
       "id": "byo-mqtt-broker",
-      "title": "Sol — An MQTT Broker from Scratch",
+      "title": "Sol \u2014 An MQTT Broker from Scratch",
       "url": "https://codepr.github.io/posts/sol-mqtt-broker",
       "language": "c",
       "category": "network-stack",
@@ -1150,7 +1663,13 @@
       "difficulty": "advanced",
       "length": "month",
       "translatable": true,
-      "tags": ["c", "networking", "mqtt", "systems", "epoll"]
+      "tags": [
+        "c",
+        "networking",
+        "mqtt",
+        "systems",
+        "epoll"
+      ]
     },
     {
       "id": "byo-syscall",
@@ -1162,7 +1681,12 @@
       "difficulty": "advanced",
       "length": "weekend",
       "translatable": false,
-      "tags": ["c", "linux", "kernel", "os"]
+      "tags": [
+        "c",
+        "linux",
+        "kernel",
+        "os"
+      ]
     },
     {
       "id": "byo-terminal-emulator",
@@ -1170,11 +1694,16 @@
       "url": "https://www.uninformativ.de/blog/postings/2018-02-24/0/POSTING-en.html",
       "language": "c",
       "category": "uncategorized",
-      "description": "Build a minimal terminal emulator. Pseudoterminals, escape codes, and X11 interaction — the plumbing behind every terminal you use.",
+      "description": "Build a minimal terminal emulator. Pseudoterminals, escape codes, and X11 interaction \u2014 the plumbing behind every terminal you use.",
       "difficulty": "advanced",
       "length": "week",
       "translatable": true,
-      "tags": ["c", "linux", "terminal", "x11"]
+      "tags": [
+        "c",
+        "linux",
+        "terminal",
+        "x11"
+      ]
     },
     {
       "id": "byo-bittorrent-go",
@@ -1186,7 +1715,12 @@
       "difficulty": "intermediate",
       "length": "week",
       "translatable": true,
-      "tags": ["go", "networking", "protocols", "bittorrent"]
+      "tags": [
+        "go",
+        "networking",
+        "protocols",
+        "bittorrent"
+      ]
     },
     {
       "id": "byo-blockchain-go",
@@ -1198,7 +1732,12 @@
       "difficulty": "intermediate",
       "length": "week",
       "translatable": true,
-      "tags": ["go", "blockchain", "cryptography", "networking"]
+      "tags": [
+        "go",
+        "blockchain",
+        "cryptography",
+        "networking"
+      ]
     },
     {
       "id": "byo-containers-linux",
@@ -1206,11 +1745,17 @@
       "url": "https://blog.lizzie.io/linux-containers-in-500-loc.html",
       "language": "c",
       "category": "docker",
-      "description": "Minimal Linux container implementation in C. Shows how Docker actually works — namespaces, cgroups, chroot, capabilities.",
+      "description": "Minimal Linux container implementation in C. Shows how Docker actually works \u2014 namespaces, cgroups, chroot, capabilities.",
       "difficulty": "advanced",
       "length": "weekend",
       "translatable": false,
-      "tags": ["c", "linux", "containers", "os", "systems"]
+      "tags": [
+        "c",
+        "linux",
+        "containers",
+        "os",
+        "systems"
+      ]
     },
     {
       "id": "byo-regex-py",
@@ -1222,7 +1767,12 @@
       "difficulty": "intermediate",
       "length": "week",
       "translatable": true,
-      "tags": ["python", "regex", "algorithms", "automata"]
+      "tags": [
+        "python",
+        "regex",
+        "algorithms",
+        "automata"
+      ]
     },
     {
       "id": "byo-dns-rust",
@@ -1234,7 +1784,12 @@
       "difficulty": "intermediate",
       "length": "week",
       "translatable": true,
-      "tags": ["rust", "networking", "dns", "protocols"]
+      "tags": [
+        "rust",
+        "networking",
+        "dns",
+        "protocols"
+      ]
     },
     {
       "id": "byo-webserver-py",
@@ -1246,7 +1801,12 @@
       "difficulty": "beginner",
       "length": "weekend",
       "translatable": true,
-      "tags": ["python", "networking", "http", "servers"]
+      "tags": [
+        "python",
+        "networking",
+        "http",
+        "servers"
+      ]
     },
     {
       "id": "byo-neural-11lines",
@@ -1258,7 +1818,12 @@
       "difficulty": "beginner",
       "length": "weekend",
       "translatable": true,
-      "tags": ["python", "ml", "neural-networks", "math"]
+      "tags": [
+        "python",
+        "ml",
+        "neural-networks",
+        "math"
+      ]
     },
     {
       "id": "byo-react-js",
@@ -1266,11 +1831,16 @@
       "url": "https://pomb.us/build-your-own-react/",
       "language": "javascript",
       "category": "frontend-framework",
-      "description": "Rebuild React from scratch step by step — virtual DOM, reconciliation, hooks. Teaches tree diffing algorithms valuable in any language.",
+      "description": "Rebuild React from scratch step by step \u2014 virtual DOM, reconciliation, hooks. Teaches tree diffing algorithms valuable in any language.",
       "difficulty": "intermediate",
       "length": "week",
       "translatable": false,
-      "tags": ["javascript", "react", "virtual-dom", "algorithms"]
+      "tags": [
+        "javascript",
+        "react",
+        "virtual-dom",
+        "algorithms"
+      ]
     },
     {
       "id": "byo-search-vector",
@@ -1278,11 +1848,17 @@
       "url": "https://boyter.org/2010/08/build-vector-space-search-engine-python/",
       "language": "python",
       "category": "search-engine",
-      "description": "Build a TF-IDF search engine from scratch. Tokenization, indexing, and ranking — core information retrieval concepts.",
+      "description": "Build a TF-IDF search engine from scratch. Tokenization, indexing, and ranking \u2014 core information retrieval concepts.",
       "difficulty": "intermediate",
       "length": "week",
       "translatable": true,
-      "tags": ["python", "search", "algorithms", "nlp", "tfidf"]
+      "tags": [
+        "python",
+        "search",
+        "algorithms",
+        "nlp",
+        "tfidf"
+      ]
     },
     {
       "id": "byo-llm-scratch",
@@ -1290,11 +1866,17 @@
       "url": "https://github.com/rasbt/LLMs-from-scratch",
       "language": "python",
       "category": "ai-model",
-      "description": "Sebastian Raschka's LLM from scratch in Python. Transformers, attention, pretraining — the foundations of modern AI.",
+      "description": "Sebastian Raschka's LLM from scratch in Python. Transformers, attention, pretraining \u2014 the foundations of modern AI.",
       "difficulty": "advanced",
       "length": "month",
       "translatable": false,
-      "tags": ["python", "ml", "llm", "transformers", "advanced"]
+      "tags": [
+        "python",
+        "ml",
+        "llm",
+        "transformers",
+        "advanced"
+      ]
     },
     {
       "id": "byo-hash-table-go",
@@ -1306,7 +1888,13 @@
       "difficulty": "advanced",
       "length": "month",
       "translatable": true,
-      "tags": ["go", "database", "data-structures", "btree", "sql"]
+      "tags": [
+        "go",
+        "database",
+        "data-structures",
+        "btree",
+        "sql"
+      ]
     },
     {
       "id": "byo-compiler-from-src",
@@ -1314,11 +1902,16 @@
       "url": "https://build-your-own.org/compiler/",
       "language": "python",
       "category": "programming-language",
-      "description": "Build a compiler from scratch in Python — lexer, parser, code gen. Practical, modern approach to compiler construction.",
+      "description": "Build a compiler from scratch in Python \u2014 lexer, parser, code gen. Practical, modern approach to compiler construction.",
       "difficulty": "intermediate",
       "length": "week",
       "translatable": true,
-      "tags": ["python", "compilers", "parsing", "codegen"]
+      "tags": [
+        "python",
+        "compilers",
+        "parsing",
+        "codegen"
+      ]
     },
     {
       "id": "byo-os-build-stack",
@@ -1326,31 +1919,48 @@
       "url": "https://www.youtube.com/watch?v=ZjwvMcP3Nf0&list=PLU94OURih-CiP4WxKSMt3UcwMSDM3aTtX",
       "language": "c",
       "category": "operating-system",
-      "description": "Video series building a complete computer system from scratch — hardware, OS, compiler, and apps. The full stack.",
+      "description": "Video series building a complete computer system from scratch \u2014 hardware, OS, compiler, and apps. The full stack.",
       "difficulty": "advanced",
       "length": "semester",
       "translatable": false,
-      "tags": ["c", "os", "hardware", "compiler", "video"]
+      "tags": [
+        "c",
+        "os",
+        "hardware",
+        "compiler",
+        "video"
+      ]
     }
   ],
-
   "projects": [
     {
       "id": "try-to-orbit",
       "title": "Try-To-Orbit",
       "url": "https://github.com/Cooper-Bugg/Try-To-Orbit",
       "description": "Physics-based orbital simulation game in C++. Starts as a CLI physics console and evolves into a gravitational mechanics simulator. Flagship learning project.",
-      "tags": ["c++", "physics", "simulation", "game", "personal"],
+      "tags": [
+        "c++",
+        "physics",
+        "simulation",
+        "game",
+        "personal"
+      ],
       "language": "c++",
       "phase": "ongoing",
       "status": "active"
     },
     {
       "id": "discord-bot",
-      "title": "Bugg Bot — Discord Bot",
+      "title": "Bugg Bot \u2014 Discord Bot",
       "url": "https://github.com/Cooper-Bugg/Discord-Bot",
       "description": "Multi-purpose Discord bot in Python with weather, games, Pokemon battles, and productivity tools. 68 commands across 10 cogs.",
-      "tags": ["python", "discord", "api", "games", "bots"],
+      "tags": [
+        "python",
+        "discord",
+        "api",
+        "games",
+        "bots"
+      ],
       "language": "python",
       "phase": "complete",
       "status": "complete"
@@ -1360,7 +1970,13 @@
       "title": "Personal Portfolio (ASCII River)",
       "url": "https://cooper-bugg.github.io/Personal-Website/",
       "description": "Interactive ASCII river scene portfolio. Fisherman catches sections of the portfolio. Built with vanilla HTML/CSS/JS.",
-      "tags": ["javascript", "html", "css", "creative", "portfolio"],
+      "tags": [
+        "javascript",
+        "html",
+        "css",
+        "creative",
+        "portfolio"
+      ],
       "language": "javascript",
       "phase": "complete",
       "status": "complete"
@@ -1370,7 +1986,13 @@
       "title": "The CPP Grind",
       "url": "https://github.com/Cooper-Bugg/thecppgrind",
       "description": "This site. C++ learning platform with articles, projects, daily games, and curated resources. Built while learning C++.",
-      "tags": ["javascript", "html", "css", "education", "c++"],
+      "tags": [
+        "javascript",
+        "html",
+        "css",
+        "education",
+        "c++"
+      ],
       "language": "javascript",
       "phase": "ongoing",
       "status": "active"
@@ -1380,7 +2002,12 @@
       "title": "Mini-CLI-Calc",
       "url": "https://github.com/Cooper-Bugg/Start-Learning-Cpp",
       "description": "Minimal command-line calculator in C++ with REPL mode, operator dispatch, and input validation.",
-      "tags": ["c++", "cli", "parsing", "beginner"],
+      "tags": [
+        "c++",
+        "cli",
+        "parsing",
+        "beginner"
+      ],
       "language": "c++",
       "phase": "foundations",
       "status": "complete"
@@ -1390,7 +2017,12 @@
       "title": "Binary Inspector",
       "url": "https://github.com/Cooper-Bugg/Start-Learning-Cpp",
       "description": "Displays binary/hex representations and IEEE-754 floating-point decomposition for any numeric value.",
-      "tags": ["c++", "binary", "bitwise", "systems"],
+      "tags": [
+        "c++",
+        "binary",
+        "bitwise",
+        "systems"
+      ],
       "language": "c++",
       "phase": "foundations",
       "status": "complete"
@@ -1400,7 +2032,13 @@
       "title": "Fork Tree Visualizer",
       "url": "https://github.com/Cooper-Bugg/Start-Learning-Cpp",
       "description": "Traces the process tree produced by fork() calls, printing each process with PID, PPID, and which fork created it.",
-      "tags": ["c++", "posix", "processes", "os", "systems"],
+      "tags": [
+        "c++",
+        "posix",
+        "processes",
+        "os",
+        "systems"
+      ],
       "language": "c++",
       "phase": "foundations",
       "status": "complete"
@@ -1410,7 +2048,13 @@
       "title": "Thread Memory Lab",
       "url": "https://github.com/Cooper-Bugg/Start-Learning-Cpp",
       "description": "Shows how global, static, local, and heap variables behave across process and thread boundaries.",
-      "tags": ["c++", "threads", "memory", "posix", "concurrency"],
+      "tags": [
+        "c++",
+        "threads",
+        "memory",
+        "posix",
+        "concurrency"
+      ],
       "language": "c++",
       "phase": "foundations",
       "status": "complete"
@@ -1420,7 +2064,13 @@
       "title": "Process Pipeline",
       "url": "https://github.com/Cooper-Bugg/Start-Learning-Cpp",
       "description": "Three-stage concurrent pipeline using POSIX message queues: sender, processor, and logger via fork().",
-      "tags": ["c++", "posix", "ipc", "concurrency", "systems"],
+      "tags": [
+        "c++",
+        "posix",
+        "ipc",
+        "concurrency",
+        "systems"
+      ],
       "language": "c++",
       "phase": "foundations",
       "status": "complete"
@@ -1430,7 +2080,12 @@
       "title": "Maze Solver",
       "url": "https://github.com/Cooper-Bugg/Start-Learning-Cpp",
       "description": "Recursive backtracking maze solver. Reads 2D text maze, marks solution path, reports steps and cells visited.",
-      "tags": ["c++", "recursion", "backtracking", "algorithms"],
+      "tags": [
+        "c++",
+        "recursion",
+        "backtracking",
+        "algorithms"
+      ],
       "language": "c++",
       "phase": "starter-pack",
       "status": "complete"
@@ -1440,7 +2095,12 @@
       "title": "Sorting Visualizer",
       "url": "https://github.com/Cooper-Bugg/Start-Learning-Cpp",
       "description": "Quicksort and mergesort side by side with timing, comparison counts, and step-by-step visualization.",
-      "tags": ["c++", "algorithms", "sorting", "complexity"],
+      "tags": [
+        "c++",
+        "algorithms",
+        "sorting",
+        "complexity"
+      ],
       "language": "c++",
       "phase": "starter-pack",
       "status": "complete"
@@ -1450,7 +2110,13 @@
       "title": "Network Analyzer",
       "url": "https://github.com/Cooper-Bugg/Start-Learning-Cpp",
       "description": "C++ port of Java graph analyzer. Dijkstra's, articulation points, BFS connected components.",
-      "tags": ["c++", "graphs", "algorithms", "data-structures", "advanced"],
+      "tags": [
+        "c++",
+        "graphs",
+        "algorithms",
+        "data-structures",
+        "advanced"
+      ],
       "language": "c++",
       "phase": "starter-pack",
       "status": "complete"
@@ -1460,7 +2126,12 @@
       "title": "Float Inspector",
       "url": "https://github.com/Cooper-Bugg/Start-Learning-Cpp",
       "description": "CLI IEEE-754 bit inspector showing sign, exponent, mantissa, GRS bits, and rounding decisions.",
-      "tags": ["c++", "binary", "floating-point", "systems"],
+      "tags": [
+        "c++",
+        "binary",
+        "floating-point",
+        "systems"
+      ],
       "language": "c++",
       "phase": "starter-pack",
       "status": "complete"
@@ -1470,63 +2141,564 @@
       "title": "COD 5e Solutions",
       "url": "https://github.com/Cooper-Bugg",
       "description": "Solutions for Patterson & Hennessy Computer Organization and Design 5th Edition.",
-      "tags": ["assembly", "hardware", "architecture", "academic"],
+      "tags": [
+        "assembly",
+        "hardware",
+        "architecture",
+        "academic"
+      ],
       "language": "assembly",
       "phase": "academic",
       "status": "complete"
     }
   ],
-
   "nav": {
     "items": [
-      { "label": "Home", "url": "index.html" },
+      {
+        "label": "Home",
+        "url": "index.html"
+      },
       {
         "label": "Learn",
         "dropdown": [
-          { "label": "Roadmap", "url": "pages/roadmap.html" },
-          { "label": "Articles", "url": "pages/articles.html" }
+          {
+            "label": "Roadmap",
+            "url": "pages/roadmap.html"
+          },
+          {
+            "label": "Articles",
+            "url": "pages/articles.html"
+          }
         ]
       },
       {
         "label": "Build",
         "dropdown": [
-          { "label": "Projects", "url": "pages/projects.html" },
-          { "label": "Games", "url": "pages/games.html" },
-          { "label": "Build Your Own", "url": "pages/build-your-own.html" }
+          {
+            "label": "Projects",
+            "url": "pages/projects.html"
+          },
+          {
+            "label": "Games",
+            "url": "pages/games.html"
+          },
+          {
+            "label": "Build Your Own",
+            "url": "pages/build-your-own.html"
+          }
         ]
       },
       {
         "label": "Explore",
         "dropdown": [
-          { "label": "References", "url": "pages/references.html" },
-          { "label": "Resources", "url": "pages/resources.html" }
+          {
+            "label": "References",
+            "url": "pages/references.html"
+          },
+          {
+            "label": "Resources",
+            "url": "pages/resources.html"
+          }
         ]
       },
-      { "label": "About", "url": "pages/about.html" },
-      { "label": "Contact", "url": "pages/contact.html" }
+      {
+        "label": "About",
+        "url": "pages/about.html"
+      },
+      {
+        "label": "Contact",
+        "url": "pages/contact.html"
+      }
     ]
   },
-
   "filter_options": {
     "references": {
-      "tags": ["c++", "algorithms", "os", "systems", "math", "linux", "tools", "security", "web", "meta", "reference", "networking"],
-      "type": ["course", "reference", "interactive", "tool", "video"],
-      "level": ["beginner", "intermediate", "advanced"],
-      "format": ["free", "paid", "freemium"]
+      "tags": [
+        "c++",
+        "algorithms",
+        "os",
+        "systems",
+        "math",
+        "linux",
+        "tools",
+        "security",
+        "web",
+        "meta",
+        "reference",
+        "networking"
+      ],
+      "type": [
+        "course",
+        "reference",
+        "interactive",
+        "tool",
+        "video"
+      ],
+      "level": [
+        "beginner",
+        "intermediate",
+        "advanced"
+      ],
+      "format": [
+        "free",
+        "paid",
+        "freemium"
+      ]
     },
     "resources": {
-      "tags": ["c++", "algorithms", "os", "systems", "math", "distributed-systems", "interview", "compilers"],
-      "type": ["book", "course", "video"],
-      "level": ["beginner", "intermediate", "advanced"],
-      "format": ["free", "paid"],
-      "time": ["weekend", "week", "month", "semester", "ongoing"]
+      "tags": [
+        "c++",
+        "algorithms",
+        "os",
+        "systems",
+        "math",
+        "distributed-systems",
+        "interview",
+        "compilers"
+      ],
+      "type": [
+        "book",
+        "course",
+        "video"
+      ],
+      "level": [
+        "beginner",
+        "intermediate",
+        "advanced"
+      ],
+      "format": [
+        "free",
+        "paid"
+      ],
+      "time": [
+        "weekend",
+        "week",
+        "month",
+        "semester",
+        "ongoing"
+      ]
     },
     "build_your_own": {
-      "language": ["c++", "c", "python", "rust", "go", "javascript", "java", "node", "assembly", "any"],
-      "category": ["3d-renderer", "database", "shell", "operating-system", "emulator", "game", "network-stack", "text-editor", "programming-language", "regex-engine", "memory-allocator", "neural-network", "git", "docker", "web-browser", "web-server", "blockchain", "physics-engine", "voxel-engine", "uncategorized"],
-      "difficulty": ["beginner", "intermediate", "advanced"],
-      "length": ["weekend", "week", "month", "semester"],
-      "translatable": [true, false]
+      "language": [
+        "c++",
+        "c",
+        "python",
+        "rust",
+        "go",
+        "javascript",
+        "java",
+        "node",
+        "assembly",
+        "any"
+      ],
+      "category": [
+        "3d-renderer",
+        "database",
+        "shell",
+        "operating-system",
+        "emulator",
+        "game",
+        "network-stack",
+        "text-editor",
+        "programming-language",
+        "regex-engine",
+        "memory-allocator",
+        "neural-network",
+        "git",
+        "docker",
+        "web-browser",
+        "web-server",
+        "blockchain",
+        "physics-engine",
+        "voxel-engine",
+        "uncategorized"
+      ],
+      "difficulty": [
+        "beginner",
+        "intermediate",
+        "advanced"
+      ],
+      "length": [
+        "weekend",
+        "week",
+        "month",
+        "semester"
+      ],
+      "translatable": [
+        true,
+        false
+      ]
     }
-  }
+  },
+  "books": [
+    {
+      "id": "csapp",
+      "title": "Computer Systems: A Programmer's Perspective",
+      "author": "Randal E. Bryant & David R. O'Hallaron",
+      "category": "Computer Systems & Hardware",
+      "tags": [
+        "systems",
+        "hardware",
+        "c",
+        "memory"
+      ],
+      "status": "owned"
+    },
+    {
+      "id": "cod",
+      "title": "Computer Organization and Design",
+      "author": "David A. Patterson & John L. Hennessy",
+      "category": "Computer Systems & Hardware",
+      "tags": [
+        "architecture",
+        "assembly",
+        "hardware"
+      ],
+      "status": "owned"
+    },
+    {
+      "id": "kr",
+      "title": "The C Programming Language",
+      "author": "Brian W. Kernighan & Dennis M. Ritchie",
+      "category": "Software Engineering & Core Programming",
+      "tags": [
+        "c",
+        "unix",
+        "fundamentals"
+      ],
+      "status": "owned"
+    },
+    {
+      "id": "roberts",
+      "title": "Programming Abstractions in C++",
+      "author": "Eric Roberts",
+      "category": "Software Engineering & Core Programming",
+      "tags": [
+        "c++",
+        "abstractions",
+        "data-structures"
+      ],
+      "status": "owned"
+    },
+    {
+      "id": "plp",
+      "title": "Programming Language Pragmatics",
+      "author": "Michael L. Scott",
+      "category": "Software Engineering & Core Programming",
+      "tags": [
+        "languages",
+        "compilers",
+        "theory"
+      ],
+      "status": "owned"
+    },
+    {
+      "id": "clean-code",
+      "title": "Clean Code",
+      "author": "Robert C. Martin",
+      "category": "Software Engineering & Core Programming",
+      "tags": [
+        "software-engineering",
+        "craft"
+      ],
+      "status": "owned"
+    },
+    {
+      "id": "making-embedded",
+      "title": "Making Embedded Systems",
+      "author": "Elecia White",
+      "category": "Embedded & Systems Programming",
+      "tags": [
+        "embedded",
+        "firmware",
+        "systems"
+      ],
+      "status": "owned"
+    },
+    {
+      "id": "tdd-embedded-c",
+      "title": "Test-Driven Development for Embedded C",
+      "author": "James W. Grenning",
+      "category": "Embedded & Systems Programming",
+      "tags": [
+        "embedded",
+        "testing",
+        "c"
+      ],
+      "status": "owned"
+    },
+    {
+      "id": "programming-embedded",
+      "title": "Programming Embedded Systems in C and C++",
+      "author": "Michael Barr",
+      "category": "Embedded & Systems Programming",
+      "tags": [
+        "embedded",
+        "c",
+        "c++"
+      ],
+      "status": "owned"
+    },
+    {
+      "id": "avr",
+      "title": "Make: AVR Programming",
+      "author": "Elliot Williams",
+      "category": "Embedded & Systems Programming",
+      "tags": [
+        "avr",
+        "microcontrollers",
+        "electronics"
+      ],
+      "status": "owned"
+    },
+    {
+      "id": "circuits",
+      "title": "Electric Circuits",
+      "author": "James W. Nilsson & Susan Riedel",
+      "category": "Electronics & Math",
+      "tags": [
+        "circuits",
+        "ece",
+        "electronics"
+      ],
+      "status": "owned"
+    },
+    {
+      "id": "communication-systems",
+      "title": "Communication Systems",
+      "author": "Simon Haykin",
+      "category": "Electronics & Math",
+      "tags": [
+        "communications",
+        "signals",
+        "ece"
+      ],
+      "status": "owned"
+    },
+    {
+      "id": "matlab",
+      "title": "MATLAB: An Introduction with Applications",
+      "author": "Amos Gilat",
+      "category": "Electronics & Math",
+      "tags": [
+        "matlab",
+        "math",
+        "engineering"
+      ],
+      "status": "owned"
+    },
+    {
+      "id": "dynamic-programming",
+      "title": "Applied Dynamic Programming",
+      "author": "Richard Bellman & Stuart Dreyfus",
+      "category": "Electronics & Math",
+      "tags": [
+        "optimization",
+        "math",
+        "dynamic-programming"
+      ],
+      "status": "owned"
+    }
+  ],
+  "links": [
+    {
+      "title": "Compiler Explorer",
+      "url": "https://godbolt.org",
+      "category": "Systems & C++",
+      "description": "Inspect compiler output and compare toolchains.",
+      "tags": [
+        "compiler",
+        "assembly",
+        "c++"
+      ]
+    },
+    {
+      "title": "CppReference",
+      "url": "https://en.cppreference.com",
+      "category": "Systems & C++",
+      "description": "Reference for C++ language and standard library behavior.",
+      "tags": [
+        "reference",
+        "c++"
+      ]
+    },
+    {
+      "title": "Operating Systems: Three Easy Pieces",
+      "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/",
+      "category": "Systems & C++",
+      "description": "Free operating systems textbook and systems reference.",
+      "tags": [
+        "os",
+        "systems"
+      ]
+    },
+    {
+      "title": "MIT Linear Algebra",
+      "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/",
+      "category": "Undergrad / Master's Math & ECE",
+      "description": "Linear algebra lectures and materials.",
+      "tags": [
+        "math",
+        "linear-algebra"
+      ]
+    },
+    {
+      "title": "All About Circuits",
+      "url": "https://www.allaboutcircuits.com/textbook/",
+      "category": "Undergrad / Master's Math & ECE",
+      "description": "Electronics textbook and reference material.",
+      "tags": [
+        "circuits",
+        "electronics"
+      ]
+    },
+    {
+      "title": "Hyprland Wiki",
+      "url": "https://wiki.hyprland.org/",
+      "category": "Linux & Dotfiles",
+      "description": "Configuration reference for the Hyprland compositor.",
+      "tags": [
+        "linux",
+        "hyprland"
+      ]
+    },
+    {
+      "title": "Neovim Documentation",
+      "url": "https://neovim.io/doc/",
+      "category": "Linux & Dotfiles",
+      "description": "Editor documentation and Lua configuration reference.",
+      "tags": [
+        "neovim",
+        "lua"
+      ]
+    },
+    {
+      "title": "Writing for Developers",
+      "url": "https://developers.google.com/tech-writing",
+      "category": "General Wisdom & Writing",
+      "description": "Technical writing lessons and guidelines.",
+      "tags": [
+        "writing",
+        "communication"
+      ]
+    },
+    {
+      "title": "COD5E Exercises",
+      "url": "https://github.com/Cooper-Bugg/cod5e-exercises",
+      "category": "Project Repositories",
+      "description": "Computer Organization and Design 5e exercise solutions with supporting architecture references.",
+      "tags": [
+        "computer-architecture",
+        "mips",
+        "ece",
+        "solutions"
+      ]
+    },
+    {
+      "title": "Learning Center",
+      "url": "https://github.com/Cooper-Bugg/Learning-Center",
+      "category": "Project Repositories",
+      "description": "Cooper's learning hub layered on top of a Build Your Own X fork, with added books, learning paths, and curated CS/systems/math resources.",
+      "tags": [
+        "learning",
+        "systems",
+        "resources",
+        "fork"
+      ]
+    },
+    {
+      "title": "Build Your Own X upstream",
+      "url": "https://github.com/codecrafters-io/build-your-own-x",
+      "category": "Project Repositories",
+      "description": "Main fork parent for the Build Your Own tutorial catalog used by Learning Center.",
+      "tags": [
+        "build-your-own",
+        "projects",
+        "upstream"
+      ]
+    },
+    {
+      "title": "Discord Bot",
+      "url": "https://github.com/Cooper-Bugg/Discord-Bot",
+      "category": "Project Repositories",
+      "description": "Python Discord bot with games, weather, NASA APOD, timers, monitoring, and utility commands.",
+      "tags": [
+        "python",
+        "discord",
+        "bot"
+      ]
+    },
+    {
+      "title": "Bugg NVIM",
+      "url": "https://github.com/Cooper-Bugg/Bugg-NVIM",
+      "category": "Linux & Dotfiles",
+      "description": "Neovim configuration resource for the terminal-centric toolchain.",
+      "tags": [
+        "neovim",
+        "lua",
+        "editor"
+      ]
+    },
+    {
+      "title": "dotfiles-sh",
+      "url": "https://github.com/Cooper-Bugg/dotfiles-sh",
+      "category": "Linux & Dotfiles",
+      "description": "Shell and dotfiles resource for Linux customization.",
+      "tags": [
+        "dotfiles",
+        "shell",
+        "linux"
+      ]
+    }
+  ],
+  "documents": [
+    {
+      "title": "Reading List",
+      "path": "../docs/books/readinglist.md",
+      "kind": "markdown",
+      "category": "books"
+    },
+    {
+      "title": "Project Repository Reference Index",
+      "path": "../docs/refs/projects/repositories.md",
+      "kind": "markdown",
+      "category": "project-refs"
+    },
+    {
+      "title": "COD5E README Copy",
+      "path": "../docs/refs/projects/cod5e-exercises.md",
+      "kind": "markdown",
+      "category": "project-refs"
+    },
+    {
+      "title": "Learning Center README Copy",
+      "path": "../docs/refs/projects/learning-center.md",
+      "kind": "markdown",
+      "category": "project-refs"
+    },
+    {
+      "title": "Discord Bot README Copy",
+      "path": "../docs/refs/projects/discord-bot.md",
+      "kind": "markdown",
+      "category": "project-refs"
+    },
+    {
+      "title": "Private Reference Archive",
+      "path": "",
+      "kind": "local",
+      "category": "private"
+    },
+    {
+      "title": "MS Prep Roadmap",
+      "path": "../docs/school/ms_prep/roadmap.md",
+      "kind": "markdown",
+      "category": "school"
+    },
+    {
+      "title": "Resume",
+      "path": "../images/Resume_CHB.pdf",
+      "kind": "pdf",
+      "category": "profile"
+    }
+  ]
 }

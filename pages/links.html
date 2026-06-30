@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Curated systems, ECE, Linux, dotfiles, and writing links from The Humanist Engineer.">
+  <meta property="og:description" content="Curated systems, ECE, Linux, dotfiles, and writing links from The Humanist Engineer.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <title>Links — The Humanist Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,500,0,0" rel="stylesheet">
+  <link rel="stylesheet" href="../css/main.css">
+  <style>
+    .links-main { max-width: var(--max-w); margin: 60px auto; padding: 0 24px; }
+    
+    /* ── Controls ── */
+    .tile-controls {
+      display: flex; flex-direction: column; gap: 14px;
+      margin-bottom: 28px;
+    }
+    .search-wrap { position: relative; max-width: 400px; }
+    .search-wrap::before {
+      content: "⌕"; position: absolute; left: 11px; top: 50%;
+      transform: translateY(-50%); color: var(--text3); font-size: 16px; pointer-events: none;
+    }
+    #link-search {
+      width: 100%; background: var(--bg2); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 8px 12px 8px 32px;
+      font-family: var(--font-mono); font-size: 13px; color: var(--text);
+      outline: none; transition: border-color var(--transition);
+    }
+    #link-search:focus { border-color: var(--accent); }
+    #link-search::placeholder { color: var(--text3); }
+    .filter-row { display: flex; flex-wrap: wrap; gap: 6px; }
+    .filter-btn {
+      background: var(--bg2); border: 1px solid var(--border2);
+      border-radius: var(--radius); padding: 4px 12px;
+      font-family: var(--font-mono); font-size: 11px; color: var(--text2);
+      cursor: pointer; transition: all var(--transition); white-space: nowrap;
+    }
+    .filter-btn:hover { color: var(--text); border-color: var(--text3); }
+    .filter-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+    /* ── Link Grid ── */
+    .link-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 20px;
+    }
+    .link-card {
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 20px;
+      display: flex; flex-direction: column; gap: 10px;
+      transition: background var(--transition), border-color var(--transition);
+      cursor: pointer;
+    }
+    .link-card:hover { background: var(--bg3); border-color: var(--border2); }
+    .link-header { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+    .link-category {
+      font-size: 9px; font-weight: 700; letter-spacing: 0.05em;
+      text-transform: uppercase; padding: 2px 6px; border-radius: 3px;
+      color: var(--blue); background: rgba(91,163,217,0.1);
+    }
+    .link-title { font-size: 13px; font-weight: 700; color: var(--text); line-height: 1.4; }
+    .link-desc { font-size: 12px; color: var(--text2); line-height: 1.6; flex: 1; }
+    .link-footer { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 4px; }
+    .tag-row { display: flex; flex-wrap: wrap; gap: 4px; }
+    .tag-row span {
+      font-size: 10px; color: var(--text3);
+      background: var(--bg3); border-radius: 3px;
+      padding: 1px 6px;
+    }
+    .visit-link {
+      font-size: 12px; color: var(--accent); font-weight: 700;
+      display: inline-flex; align-items: center; gap: 4px;
+    }
+    .visit-link:hover { text-decoration: underline; }
+
+    .empty-state { color: var(--text3); font-size: 13px; text-align: center; padding: 48px 0; }
+
+    @media (max-width: 900px) { .link-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 580px) { .link-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand-wrap">
+        <button class="theme-toggle" type="button" role="switch" aria-label="Toggle light mode" aria-checked="false"><span class="material-symbols-rounded toggle-dark">dark_mode</span><span class="material-symbols-rounded toggle-light">light_mode</span></button>
+        <a href="../index.html" class="logo"><span class="logo-bracket">//</span> The Humanist Engineer</a>
+      </div>
+      <nav class="main-nav">
+        <a href="../index.html">Home</a>
+        <a href="intro.html">Intro</a>
+        <div class="nav-group">
+          <button>Learn</button>
+          <div class="dropdown-panel">
+            <a href="roadmap.html">Roadmap</a>
+            <a href="articles.html">Articles</a>
+            <a href="games.html">Daily Games</a>
+          </div>
+        </div>
+        <div class="nav-group">
+          <button>Build</button>
+          <div class="dropdown-panel">
+            <a href="projects.html">Projects</a>
+            <a href="build-your-own.html">Build Your Own</a>
+          </div>
+        </div>
+        <div class="nav-group">
+          <button>Explore</button>
+          <div class="dropdown-panel">
+            <a href="books.html">Books</a>
+            <a href="links.html">Links</a>
+            <a href="documents.html">Documents</a>
+            <a href="references.html">References</a>
+            <a href="resources.html">Resources</a>
+          </div>
+        </div>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="nav-contact">Contact</a>
+      </nav>
+      <button class="menu-toggle" aria-label="Toggle menu"><span class="material-symbols-rounded">menu</span></button>
+    </div>
+  </header>
+
+  <div class="page-header">
+    <div class="section-inner">
+      <h1 style="font-family:var(--font-serif);font-size:clamp(28px,4vw,44px);font-weight:400">Links</h1>
+      <p>Curated systems, ECE, Linux, dotfiles, and writing links from The Humanist Engineer.</p>
+    </div>
+  </div>
+
+  <main class="links-main">
+    <div class="tile-controls">
+      <div class="search-wrap">
+        <input id="link-search" type="search" placeholder="Search title, description, tag..." autocomplete="off">
+      </div>
+      <div id="link-filters" class="filter-row" aria-label="Link category filters"></div>
+    </div>
+    <div id="links-root" class="link-grid"></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span class="footer-logo">The Humanist Engineer</span>
+      <span class="footer-note">Built while learning. Improving as I go.</span>
+      <div class="footer-links">
+        <a href="https://github.com/Cooper-Bugg" target="_blank" rel="noopener">GitHub</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    const linksRoot = document.getElementById('links-root');
+    const search = document.getElementById('link-search');
+    const filters = document.getElementById('link-filters');
+    let links = [];
+    let activeCategory = 'all';
+
+    function matchesLink(link) {
+      const query = search.value.trim().toLowerCase();
+      const haystack = [link.title, link.description, link.category, ...(link.tags || [])].join(' ').toLowerCase();
+      return (activeCategory === 'all' || link.category === activeCategory) && (!query || haystack.includes(query));
+    }
+
+    function renderFilters() {
+      const categories = ['all', ...new Set(links.map(link => link.category))];
+      filters.innerHTML = categories.map(category => `<button class="filter-btn${category === activeCategory ? ' active' : ''}" type="button" data-category="${category}">${category}</button>`).join('');
+      filters.querySelectorAll('button').forEach(button => {
+        button.addEventListener('click', () => {
+          activeCategory = button.dataset.category;
+          renderFilters();
+          renderLinks();
+        });
+      });
+    }
+
+    function renderLinks() {
+      const filtered = links.filter(matchesLink);
+      
+      if (filtered.length === 0) {
+        linksRoot.innerHTML = '<p class="empty-state" style="grid-column: 1/-1;">// no matching links</p>';
+        return;
+      }
+
+      linksRoot.innerHTML = filtered.map(link => `
+        <article class="link-card" onclick="window.open('${link.url}', '_blank')">
+          <div class="link-header">
+            <span class="link-category">${link.category}</span>
+          </div>
+          <h3 class="link-title">${link.title}</h3>
+          <p class="link-desc">${link.description}</p>
+          <div class="link-footer">
+            <div class="tag-row">${link.tags.map(tag => `<span>${tag}</span>`).join('')}</div>
+            <span class="visit-link">Visit <span class="material-symbols-rounded" style="font-size:14px;margin-left:2px">arrow_outward</span></span>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    fetch('../site-data.json')
+      .then(response => response.json())
+      .then(data => {
+        links = data.links || [];
+        renderFilters();
+        renderLinks();
+      });
+    search.addEventListener('input', renderLinks);
+  </script>
+</body>
+</html>
