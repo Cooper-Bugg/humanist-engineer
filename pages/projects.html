@@ -2,13 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Projects by Cooper Huntington-Bugg: systems programming, computer architecture, static sites, bots, and learning tools.">
-  <meta property="og:description" content="Systems, C++, architecture, bot, and learning-tool projects from The Humanist Engineer.">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary">
-  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
-  <title>Projects — The Humanist Engineer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <meta name="description" content="43 C++ projects from CLI tools to systems programming. Every project hand-typed and mapped to the concepts behind it.">  <meta property="og:description" content="43 C++ projects from CLI tools to systems programming. Every project hand-typed and mapped to the concepts behind it.">  <meta property="og:type" content="website">  <meta name="twitter:card" content="summary">  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <title>Projects — The C++ Grind</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,500,0,0" rel="stylesheet">
@@ -20,20 +15,31 @@
     <div class="header-inner">
       <div class="brand-wrap">
         <button class="theme-toggle" type="button" role="switch" aria-label="Toggle light mode" aria-checked="false"><span class="material-symbols-rounded toggle-dark">dark_mode</span><span class="material-symbols-rounded toggle-light">light_mode</span></button>
-        <a href="../index.html" class="logo"><span class="logo-bracket">//</span> The Humanist Engineer</a>
+  <a href="../index.html" class="logo"><span class="logo-bracket">//</span> The C++ Grind</a>
       </div>
       <nav class="main-nav">
         <a href="../index.html">Home</a>
-        <a href="roadmap.html">Roadmap</a>
-        <a href="articles.html">Articles</a>
-        <a href="projects.html">Projects</a>
+        <a href="intro.html">Intro</a>
+        <div class="nav-group">
+          <button>Learn</button>
+          <div class="dropdown-panel">
+            <a href="roadmap.html">Roadmap</a>
+            <a href="articles.html">Articles</a>
+            <a href="games.html">Daily Games</a>
+          </div>
+        </div>
+        <div class="nav-group">
+          <button>Build</button>
+          <div class="dropdown-panel">
+            <a href="projects.html">Projects</a>
+            <a href="build-your-own.html">Build Your Own</a>
+          </div>
+        </div>
         <div class="nav-group">
           <button>Explore</button>
           <div class="dropdown-panel">
-            <a href="books.html">Books</a>
-            <a href="links.html">Links</a>
-            <a href="documents.html">Documents</a>
             <a href="references.html">References</a>
+            <a href="resources.html">Resources</a>
           </div>
         </div>
         <a href="about.html">About</a>
@@ -43,104 +49,28 @@
     </div>
   </header>
 
-  <div class="page-header terminal-page-header">
+  <div class="page-header" style="padding:60px 24px 40px;border-bottom:1px solid var(--border)">
     <div class="section-inner">
-      <div class="eyebrow">// project archive</div>
-      <h1>Projects</h1>
-      <p>Systems exercises, architecture work, static-site tooling, bots, and learning-center repositories. The C++ work remains preserved as a reference track inside the broader engineering portfolio.</p>
+      <h1 style="font-family:var(--font-serif);font-size:clamp(28px,4vw,44px);font-weight:400">Projects</h1>
+      <p style="font-size:14px;color:var(--text2);margin-top:12px;max-width:600px">43 C++ projects from CLI tools to systems programming. Every project hand-typed and mapped to the concepts behind it.</p>
     </div>
   </div>
 
-  <main class="data-page">
-    <div class="data-toolbar">
-      <label class="search-field">
-        <span class="material-symbols-rounded" aria-hidden="true">search</span>
-        <input id="project-search" type="search" placeholder="Search projects, tags, language..." autocomplete="off">
-      </label>
-      <div id="project-filters" class="filter-row" aria-label="Project filters"></div>
-    </div>
-    <div id="projects-root" class="link-sections"></div>
+  <main style="max-width:var(--max-w);margin:60px auto;padding:0 24px">
+    <p style="color:var(--text3);font-size:13px">// Awaiting Content</p>
   </main>
 
   <footer class="site-footer">
     <div class="footer-inner">
-      <span class="footer-logo">The Humanist Engineer</span>
-      <span class="footer-note">Systems, ECE, Linux, books, and projects.</span>
+      <span class="footer-logo">The C++ Grind</span>
+      <span class="footer-note">Built while learning. Improving as I go.</span>
       <div class="footer-links">
-        <a href="https://github.com/Cooper-Bugg" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://github.com/Cooper-Bugg" target="_blank">GitHub</a>
         <a href="contact.html">Contact</a>
       </div>
     </div>
   </footer>
 
   <script src="../js/main.js"></script>
-  <script src="../js/navigation.js"></script>
-  <script>
-    const root = document.getElementById('projects-root');
-    const search = document.getElementById('project-search');
-    const filters = document.getElementById('project-filters');
-    let projects = [];
-    let active = 'all';
-
-    function projectGroup(project) {
-      if (project.phase === 'academic') return 'Academic / ECE';
-      if (project.language === 'javascript') return 'Web / Site';
-      if ((project.tags || []).includes('systems')) return 'Systems / C++';
-      return 'Project Work';
-    }
-
-    function matches(project) {
-      const query = search.value.trim().toLowerCase();
-      const haystack = [project.title, project.description, project.language, project.phase, ...(project.tags || [])].join(' ').toLowerCase();
-      return (active === 'all' || projectGroup(project) === active) && (!query || haystack.includes(query));
-    }
-
-    function renderFilters() {
-      const groups = ['all', ...new Set(projects.map(projectGroup))];
-      filters.innerHTML = groups.map(group => `<button class="filter-btn${group === active ? ' active' : ''}" type="button" data-group="${group}">${group}</button>`).join('');
-      filters.querySelectorAll('button').forEach(button => {
-        button.addEventListener('click', () => {
-          active = button.dataset.group;
-          renderFilters();
-          renderProjects();
-        });
-      });
-    }
-
-    function renderProjects() {
-      const grouped = projects.filter(matches).reduce((acc, project) => {
-        (acc[projectGroup(project)] ||= []).push(project);
-        return acc;
-      }, {});
-      root.innerHTML = Object.entries(grouped).map(([group, items]) => `
-        <section class="data-section">
-          <h2>${group}</h2>
-          <div class="link-grid">
-            ${items.map(project => `
-              <a class="link-card" href="${project.url}" target="_blank" rel="noopener">
-                <span class="link-arrow">↗</span>
-                <h3>${project.title}</h3>
-                <p>${project.description}</p>
-                <div class="tag-row">
-                  <span>${project.language || 'mixed'}</span>
-                  <span>${project.status || 'active'}</span>
-                  ${(project.tags || []).slice(0, 4).map(tag => `<span>${tag}</span>`).join('')}
-                </div>
-              </a>
-            `).join('')}
-          </div>
-        </section>
-      `).join('') || '<p class="empty-state">// no matching projects</p>';
-    }
-
-    fetch('../site-data.json')
-      .then(response => response.json())
-      .then(data => {
-        projects = data.projects || [];
-        renderFilters();
-        renderProjects();
-      });
-    search.addEventListener('input', renderProjects);
-  </script>
 </body>
 </html>
